@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Institut.io API</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -201,7 +201,7 @@
       <script src="javascripts/all.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -212,9 +212,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -225,19 +222,107 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#search-engine" class="toc-h1 toc-link" data-title="Search Engine">Search Engine</a>
+          </li>
+          <li>
+            <a href="#administration" class="toc-h1 toc-link" data-title="Administration">Administration</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#accounts" class="toc-h1 toc-link" data-title="Accounts">Accounts</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#account-creation" class="toc-h2 toc-link" data-title="Account Creation">Account Creation</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#account-object" class="toc-h2 toc-link" data-title="Account Object">Account Object</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#courses" class="toc-h1 toc-link" data-title="Courses">Courses</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-courses" class="toc-h2 toc-link" data-title="Get All Courses">Get All Courses</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-a-specific-course" class="toc-h2 toc-link" data-title="Get A Specific Course">Get A Specific Course</a>
+                  </li>
+                  <li>
+                    <a href="#paginate" class="toc-h2 toc-link" data-title="Paginate">Paginate</a>
+                  </li>
+                  <li>
+                    <a href="#search-an-expression" class="toc-h2 toc-link" data-title="Search An Expression">Search An Expression</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-domain" class="toc-h2 toc-link" data-title="Filter By Domain">Filter By Domain</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-mode" class="toc-h2 toc-link" data-title="Filter By Mode">Filter By Mode</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-date" class="toc-h2 toc-link" data-title="Filter By Date">Filter By Date</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-price" class="toc-h2 toc-link" data-title="Filter By Price">Filter By Price</a>
+                  </li>
+                  <li>
+                    <a href="#filter-by-duration" class="toc-h2 toc-link" data-title="Filter By Duration">Filter By Duration</a>
+                  </li>
+                  <li>
+                    <a href="#restrict-course-info" class="toc-h2 toc-link" data-title="Restrict Course Info">Restrict Course Info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sessions" class="toc-h1 toc-link" data-title="Sessions">Sessions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-sessions-of-a-course" class="toc-h2 toc-link" data-title="Get All Sessions Of A Course">Get All Sessions Of A Course</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-session" class="toc-h2 toc-link" data-title="Get A Specific Session">Get A Specific Session</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#domains" class="toc-h1 toc-link" data-title="Domains">Domains</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-domains" class="toc-h2 toc-link" data-title="Get All Domains">Get All Domains</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#premises" class="toc-h1 toc-link" data-title="Premises">Premises</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-premises" class="toc-h2 toc-link" data-title="Get All Premises">Get All Premises</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-premise" class="toc-h2 toc-link" data-title="Get A Specific Premise">Get A Specific Premise</a>
+                  </li>
+                  <li>
+                    <a href="#restrict-premise-info" class="toc-h2 toc-link" data-title="Restrict Premise Info">Restrict Premise Info</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#other-objects" class="toc-h1 toc-link" data-title="Other Objects">Other Objects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#image-object" class="toc-h2 toc-link" data-title="Image Object">Image Object</a>
+                  </li>
+                  <li>
+                    <a href="#price-object" class="toc-h2 toc-link" data-title="Price Object">Price Object</a>
+                  </li>
+                  <li>
+                    <a href="#duration-object" class="toc-h2 toc-link" data-title="Duration Object">Duration Object</a>
+                  </li>
+                  <li>
+                    <a href="#count-object" class="toc-h2 toc-link" data-title="Count Object">Count Object</a>
                   </li>
               </ul>
           </li>
@@ -246,198 +331,1202 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://www.institut.io' target='_blank'>Sign up for an account</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Institut.io API! You can use our API to access an organization&#39;s training courses and related information.</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p>An organization that has an account on Institut.io can administer its own data (training courses, schedules, training centers, etc.) in Institut.io&#39;s backoffice.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>Any media, whether it be owned by the organization or by a third party such as a training course marketplace, can retrieve the organization&#39;s data thanks to the API using the right key.</p>
+<h1 id='search-engine'>Search Engine</h1>
+<p>Institut.io implements Elasticsearch, which provides great performance and flexibility to the training courses search engine.</p>
+
+<p>Elasticsearch is the most popular enterprise search engine in the world, as it combines great performance with simplicity, adaptability and scalability. For detailed information, please visit <a href="https://www.elastic.co/products/elasticsearch" target="&#95;blank">Elasticsearch&#39;s website</a></p>
+<h1 id='administration'>Administration</h1>
+<p>All data indexed in Institut.io&#39;s search engine is administered in a backoffice provided by Institut.io to the administrators of every account.</p>
+
+<p>To access your account&#39;s backoffice, visit the <a href="https://api.institut.io/admin/login" target="&#95;blank">Institut.io&#39;s login page</a> and use the credentials provided when subscribing to an account. A password retrieval procedure can be accessed from the login page.</p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<pre class="highlight shell tab-shell"><code><span class="c"># With cUrl, you can just pass the correct header with each request</span>
+curl https://api.institut.io/last_part_of_url  <span class="se">\</span>
+  -H <span class="s2">"Authorization: api_key"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>api_key</code> with your API key and <code>last_part_of_url</code> with an API endpoint&#39;s URL.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Institut.io uses API keys to allow access to the API.</p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>When subscribing to an Institut.io account, an organization is granted an API key, referred to in this documentation as <code>api_key</code>.</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p>You can register an Institut.io account on <a href="https://www.institut.io" target="&#95;blank">Institut.io&#39;s website</a>.</p>
+
+<p>Institut.io expects for the API key to be included in all API requests to the server in the request header. The password field should be left blank.</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>api_key</td>
+<td>API key granted by Institut.io to a registered account</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+Institut.io operates exclusively over HTTPS. Requests that are received over HTTP without encryption will fail.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='accounts'>Accounts</h1><h2 id='account-creation'>Account Creation</h2>
+<p>An Account can be created free of payment, capture or any kind of commitment, using the <a href="https://www.institut.io" target="&#95;blank">Institut.io&#39;s website</a>.</p>
+<h2 id='account-object'>Account Object</h2>
+<p>The Account object contains information about an Institut.io account.</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Account</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>The title of the Account</td>
+</tr>
+<tr>
+<td><code>coverImage</code></td>
+<td><code>array</code></td>
+<td>Information about the Image that is linked to the Account as its cover image</td>
+</tr>
+</tbody></table>
+<h1 id='courses'>Courses</h1><h2 id='get-all-courses'>Get All Courses</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"238"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on site"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/5561fcb66eb7666a6247b94aa4dbae28.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/_5561fcb66eb7666a6247b94aa4dbae28.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conseil"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"242"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Réseaux - serveurs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/061d4c71f5191590504dfd4100af972d.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/_061d4c71f5191590504dfd4100af972d.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"excel"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sagittarius OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on site"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"priceInter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3200.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountIncVat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3840.00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all Courses.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET https://api.institut.io/courses</code></p>
+<h3 id='response-fields'>Response Fields</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>Identifier of the course</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-course'>Get A Specific Course</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses/243"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"243"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Réseaux - serveurs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/4165c3046ee2b35cbf1b3c1a9e5b8cce.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/_4165c3046ee2b35cbf1b3c1a9e5b8cce.jpeg"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moon"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sagittarius OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on site"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"En quelques mots, voici un résumé"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn </span><span class="se">\r\n\r\n</span><span class="s2">Azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CEtte formation est très intéressante, elle porte sur les réseaux et serveurs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"targetedSkills"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Savoir gérer les serveurs"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"programme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;p&gt;Azerty&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;&lt;em&gt;Lorem ipsum&lt;/em&gt;&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;Qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&amp;nbsp;qsdfghjklm&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;&amp;nbsp;&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;&lt;strong&gt;Lorem&lt;/strong&gt;&lt;/p&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;Ipsum&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/e2e624085ca161c9fb7994d22eea520f.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/_e2e624085ca161c9fb7994d22eea520f.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hello, this is a greeting card for year 2013"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"priceInter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2000.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountIncVat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2200.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"percent"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discountAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"discountedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1700.00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"priceIntra"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amountIncVat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1200.00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">121438042</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"years"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"hours"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"minutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">47</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">22</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific course.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses/&lt;id&gt;</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the course to retrieve</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<h3 id='response-fields-2'>Response Fields</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Course</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>The title of the Course</td>
+</tr>
+<tr>
+<td><code>indexed</code></td>
+<td><code>boolean</code></td>
+<td>Instruction whether the Course should be allowed to be indexed by search engine bots on the media making the API call</td>
+</tr>
+<tr>
+<td><code>account</code></td>
+<td><code>array</code></td>
+<td>The Account which the Course is linked to on the media making the API calls</td>
+</tr>
+<tr>
+<td><code>owner</code></td>
+<td><code>array</code></td>
+<td>The Account which owns the Course (ie which was used when creating the Course object)</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>array</code></td>
+<td>The learning Mode of the Course</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>The summary of the Course</td>
+</tr>
+<tr>
+<td><code>goal</code></td>
+<td><code>string</code></td>
+<td>The goal of the Course</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>The description of the Course</td>
+</tr>
+<tr>
+<td><code>targetedSkills</code></td>
+<td><code>string</code></td>
+<td>The targeted skills of the Course</td>
+</tr>
+<tr>
+<td><code>programme</code></td>
+<td><code>string</code></td>
+<td>The programme of the Course</td>
+</tr>
+<tr>
+<td><code>coverImage</code></td>
+<td><code>array</code></td>
+<td>The cover Image of the Course</td>
+</tr>
+<tr>
+<td><code>priceInter</code></td>
+<td><code>array</code></td>
+<td>The inter-organization Price of the Course</td>
+</tr>
+<tr>
+<td><code>priceIntra</code></td>
+<td><code>array</code></td>
+<td>The intra-organization Price of the Course</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td><code>array</code></td>
+<td>The duration of the Course</td>
+</tr>
+<tr>
+<td><code>typicalLearningTime</code></td>
+<td><code>array</code></td>
+<td>The typical learning time of the Course</td>
+</tr>
+<tr>
+<td><code>count</code></td>
+<td><code>array</code></td>
+<td>The number of sessions of the Course</td>
+</tr>
+<tr>
+<td><code>nextStartDate</code></td>
+<td><code>int</code></td>
+<td>The timestamp of the Course&#39;s next start date</td>
+</tr>
+<tr>
+<td><code>nextOpenDate</code></td>
+<td><code>int</code></td>
+<td>The timestamp of the Course&#39;s next opening date</td>
+</tr>
+<tr>
+<td><code>premises</code></td>
+<td><code>array</code></td>
+<td>The Premises where the Course is scheduled</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='paginate'>Paginate</h2>
+<p>The &quot;Get All Courses&quot; endpoint can be queried with pagination parameters.</p>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?paginate[from]=20&amp;paginate[size]=10"</span>
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns 10 Courses ranking from 21 to 30 (if the query without pagination parameters should return more than 30 results).</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><code>GET https://api.institut.io/courses?paginate[from]=&lt;first_result_ranking&gt;&amp;paginate[size]=&lt;max_number_returned_results</code></p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td><code>first_result_ranking</code></td>
+<td><code>int</code></td>
+<td>Ranking of the first result to be returned</td>
+</tr>
+<tr>
+<td><code>max_number_returned_results</code></td>
+<td><code>int</code></td>
+<td>Maximum number of results to be returned</td>
+</tr>
+</tbody></table>
+<h2 id='search-an-expression'>Search An Expression</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?expression=test"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"238"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"score"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.1576157</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran OF"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"on site"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/5561fcb66eb7666a6247b94aa4dbae28.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/_5561fcb66eb7666a6247b94aa4dbae28.jpeg"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"conseil"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses matching an expression.</p>
+
+<p>The results of this query include an additional <code>score</code> field of type <code>decimal</code>. This fields ranks the results according to their relevance with the <code>expression</code> parameter. The most relevant results are ranked with the highest <code>score</code> values.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?expression=&lt;expression&gt;</code></p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>expression</code></td>
+<td><code>string</code></td>
+<td>The searched expression</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-3'>Response Fields</h3>
+<p>The response includes a <code>score</code> field in addition to all fields returned by the queries that fetch one or several Courses.</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>score</code></td>
+<td><code>decimal</code></td>
+<td>The score of the Course</td>
+</tr>
+</tbody></table>
+<h2 id='filter-by-domain'>Filter By Domain</h2><h3 id='using-domain-titles'>Using Domain titles</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?domains[titles]=Commercial,Agilité"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses linked to a Domain or one of its children.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?domains[titles]=&lt;domain_titles&gt;</code></p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>domain_titles</code></td>
+<td><code>string</code></td>
+<td>The Domain titles, separated with comas</td>
+</tr>
+</tbody></table>
+<h3 id='using-domain-ids'>Using Domain IDs</h3><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?domains[ids]=4,14"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses linked to a Domain or one of its children.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?domains[ids]=&lt;domain_ids&gt;</code></p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>domain_ids</code></td>
+<td><code>string</code></td>
+<td>The Domain IDs, separated with comas</td>
+</tr>
+</tbody></table>
+<h2 id='filter-by-mode'>Filter By Mode</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?modes=onsite,mooc"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses which Mode matches the request.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?modes=&lt;modes&gt;</code></p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>modes</code></td>
+<td><code>string</code></td>
+<td>The Mode names, separated with comas: <br> <code>onsite</code> - on site course <br> <code>onsiteIntra</code> - on site intra-organization <br> <code>onsiteInter</code> - on site inter-organization <br> <code>elearning</code> - e-learning course <br> <code>phone</code> - cours par téléphone <br> <code>tutored</code> - remote course with a tutor <br> <code>blended</code> - a course combining on site and remote training <br> <code>mooc</code> - MOOC (Massive Open Online Course) <br> <code>workshop</code> - Workshop <br> <code>seminar</code> - Seminar <br> <code>conference</code> - Conference <br> <code>serious</code> - Serious game <br> <code>mobile</code> - Mobile learning <br> <code>rapide</code> - Rapid learning</td>
+</tr>
+</tbody></table>
+<h2 id='filter-by-date'>Filter By Date</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?date[start]=1541238178"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?date[end]=1541238178"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?date[start]=1541238178&amp;date[end]=1541238178"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses which scheduled dates match the request.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?dates[start]=&lt;start_date&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?dates[end]=&lt;end_date&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?dates[start]=&lt;start_date&gt;&amp;dates[end]=&lt;end_date&gt;</code></p>
+
+<p>To convert a date to its timestamp before calling the API endpoint, there are several tools available such as <a href="https://helloacm.com/tools/unix-timestamp-converter/" target="&#95;blank">HelloACM&#39;s Unix timestamp converter</a>, which provides an API endpoint for Date String to TimeStamp conversion.</p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>start_date</code></td>
+<td><code>int</code></td>
+<td>The start date&#39;s timestamp</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td><code>int</code></td>
+<td>The end date&#39;s timestamp</td>
+</tr>
+</tbody></table>
+<h2 id='filter-by-price'>Filter By Price</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?price[min]=1000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?price[max]=2000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?price[min]=1000&amp;price[max]=2000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?price[type]=inter&amp;price[max]=2000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses which Price(s) match the request.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?price[min]=&lt;minimum_price&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?price[max]=&lt;maximum_price&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?price[min]=&lt;minimum_price&gt;&amp;price[max]=&lt;maximum_price&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?price[type]=&lt;price_type&gt;&amp;price[max]=&lt;maximum_price&gt;</code></p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>minimum_price</code></td>
+<td><code>int</code></td>
+<td>The minimum Price</td>
+</tr>
+<tr>
+<td><code>maximum_price</code></td>
+<td><code>int</code></td>
+<td>The maximum Price</td>
+</tr>
+<tr>
+<td><code>price_type</code></td>
+<td><code>int</code></td>
+<td>The Price type: <br> <code>inter</code> - Price for inter-organization training course <br> <code>intra</code> - Price for intra-organization training course</td>
+</tr>
+</tbody></table>
+<h2 id='filter-by-duration'>Filter By Duration</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?duration[min]=100000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?duration[max]=500000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?duration[min]=100000&amp;duration[max]=500000"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all Courses which Duration matches the request.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?duration[min]=&lt;minimum_duration&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?duration[max]=&lt;maximum_duration&gt;</code></p>
+
+<p><code>GET https://api.institut.io/courses?duration[min]=&lt;minimum_duration&gt;&amp;duration[max]=&lt;maximum_duration&gt;</code></p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>minimum_duration</code></td>
+<td><code>int</code></td>
+<td>The minimum Duration in seconds (refers to the canonical value of the Duration)</td>
+</tr>
+<tr>
+<td><code>maximum_duration</code></td>
+<td><code>int</code></td>
+<td>The maximum Duration in seconds (refers to the canonical value of the Duration)</td>
+</tr>
+</tbody></table>
+<h2 id='restrict-course-info'>Restrict Course Info</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?display=mode"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses?display=owner,priceinter,count,dates,premises"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>By default, Course queries return a significant number of fields for each Course.</p>
+
+<p>The <code>display</code> parameter can be used to optimize performance by returning only a selection of field values.</p>
+
+<p>The <code>id</code> and <code>title</code> fields are always returned.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses?display=&lt;fields_to_be_returned&gt;</code></p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>display</code></td>
+<td><code>string</code></td>
+<td>The fields which values have to be returned. The <code>display</code> parameter can include several field names, which must be separated with commas: <br> <code>owner</code> <br> <code>mode</code> <br> <code>summary</code> <br> <code>goal</code> <br> <code>description</code> <br> <code>targetedSkills</code> <br> <code>programme</code> <br> <code>coverImage</code> <br> <code>domains</code> <br> <code>priceinter</code> <br> <code>priceintra</code> <br> <code>duration</code> <br> <code>typicalLearningTime</code> <br> <code>count</code> <br> <code>dates</code> <br> <code>premises</code></td>
+</tr>
+</tbody></table>
+<h1 id='sessions'>Sessions</h1>
+<p>A Session is a scheduled occurrence of a Course.</p>
+<h2 id='get-all-sessions-of-a-course'>Get All Sessions Of A Course</h2><h2 id='get-a-specific-session'>Get A Specific Session</h2><h1 id='domains'>Domains</h1>
+<p>A Domain is a training topic which Courses can be linked to.
+A Domain can have a parent and several children.</p>
+<h2 id='get-all-domains'>Get All Domains</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/domains"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Administration"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Commercial"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Achats"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vente"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Management"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Agilité"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leadership"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Négociation"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all domains.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/domains</code></p>
+<h3 id='response-fields-4'>Response Fields</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Domain</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>The name of the Domain</td>
+</tr>
+<tr>
+<td><code>children</code></td>
+<td><code>array</code></td>
+<td>The Domain&#39;s children</td>
+</tr>
+</tbody></table>
+<h1 id='premises'>Premises</h1>
+<p>A Premise is a location linked to an Account: training center, office, etc.</p>
+<h2 id='get-all-premises'>Get All Premises</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/premises"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran - Centre de Paris"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training center"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ceci est </span><span class="se">\r\n</span><span class="s2">un test"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12 bd de la Gare"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP 73894"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"75001"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"paris@aldebaran.fr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04627291947"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0628294820"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aldebaran Headquarter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"headquarter"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Il s'agit du siège social"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15 rue du Puits"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Route de la Rivière"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BP12983"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13245"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marseille"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bouches du Rhône"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hq@aldebaran.fr"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0394857823"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0328475629"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all premises.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/premises</code></p>
+<h3 id='response-fields-5'>Response Fields</h3>
+<p>The response fields for this endpoint are the same as the response fields for the endpoint which retrieves a specific premise.</p>
+<h2 id='get-a-specific-premise'>Get A Specific Premise</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/premises/6"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hello"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training center"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 rue de la Gare"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TOULOUSE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"johndoe@gmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0123456789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific premise.</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/premises/&lt;id&gt;</code></p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the premise to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-6'>Response Fields</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Premise</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>The name of the Premise</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>The type of the Premise: <br> <code>training center</code> - regular training center <br> <code>headquarter</code> - headquarter of the organization <br> <code>offices</code> - offices of the organization, that are neither the headquarter nor a training center <br> <code>conference</code> - a conference hall that hosts the organization&#39;s events <br> <code>others</code> - any other type of premises</td>
+</tr>
+<tr>
+<td><code>rank</code></td>
+<td><code>int</code></td>
+<td>The rank of the Premise among the list of all Premises linked to the Account</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>A text describing the Premise</td>
+</tr>
+<tr>
+<td><code>address1</code></td>
+<td><code>string</code></td>
+<td>First line of the Premise&#39;s address</td>
+</tr>
+<tr>
+<td><code>address2</code></td>
+<td><code>string</code></td>
+<td>Second line of the Premise&#39;s address</td>
+</tr>
+<tr>
+<td><code>address3</code></td>
+<td><code>string</code></td>
+<td>Third line of the Premise&#39;s address</td>
+</tr>
+<tr>
+<td><code>zipcode</code></td>
+<td><code>string</code></td>
+<td>The zipcode of the Premise&#39;s location</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td><code>string</code></td>
+<td>The city where the Premise is located</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><code>string</code></td>
+<td>The state where the Premise is located</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><code>string</code></td>
+<td>The country where the Premise is located</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td><code>string</code></td>
+<td>The latitude where the Premise is located</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td><code>string</code></td>
+<td>The longitude where the Premise is located</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td><code>string</code></td>
+<td>The email contact of the Premise</td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td><code>string</code></td>
+<td>The phone contact of the Premise</td>
+</tr>
+<tr>
+<td><code>fax</code></td>
+<td><code>string</code></td>
+<td>The fax contact of the Premise</td>
+</tr>
+</tbody></table>
+<h2 id='restrict-premise-info'>Restrict Premise Info</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/premises?display=city"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/premises?display=title,address"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[]</span><span class="w">
+</span></code></pre>
+<p>By default, Premise queries return a significant number of fields for each Premise.</p>
+
+<p>The <code>display</code> parameter can be used to optimize performance by returning only a selection of field values.</p>
+
+<p>The <code>id</code> field is always returned.</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/premises?display=&lt;fields_to_be_returned&gt;</code></p>
+<h3 id='query-parameters-12'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>display</code></td>
+<td><code>string</code></td>
+<td>The fields which values have to be returned. The <code>display</code> parameter can include several field names, which must be separated with commas: <br> <code>title</code> <br> <code>type</code> <br> <code>rank</code> <br> <code>description</code> <br> <code>address</code> <br> <code>zipcode</code> <br> <code>city</code> <br> <code>state</code> <br> <code>country</code> <br> <code>coordinates</code> <br> <code>email</code> <br> <code>phone</code> <br> <code>fax</code></td>
+</tr>
+</tbody></table>
+<h1 id='other-objects'>Other Objects</h1>
+<p>Institut.io&#39;s model includes a number of objects.</p>
+
+<p>Some of them are generic:</p>
+
+<ul>
+<li>Image</li>
+</ul>
+
+<p>Others are specific to Course Objects:</p>
+
+<ul>
+<li><p>Mode</p></li>
+<li><p>Price</p></li>
+<li><p>Duration</p></li>
+<li><p>Count</p></li>
+</ul>
+<h2 id='image-object'>Image Object</h2>
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>file</code></td>
+<td><code>string</code></td>
+<td>The URL of the Image file</td>
+</tr>
+<tr>
+<td><code>thumb</code></td>
+<td><code>string</code></td>
+<td>The URL of the Image&#39;s thumbnail</td>
+</tr>
+<tr>
+<td><code>alt</code></td>
+<td><code>string</code></td>
+<td>The alt attribute of the Image</td>
+</tr>
+</tbody></table>
+<h2 id='price-object'>Price Object</h2>
+<p>The Price of the Course, either inter or intra organization:</p>
+
+<ul>
+<li><p>inter organization: the Course gathers trainees from different organizations and the Price is set for each single individual</p></li>
+<li><p>intra organization: the Course gathers trainees from a single organization and the Price is set for the whole group of trainees</p></li>
+</ul>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>amount</code></td>
+<td><code>decimal</code></td>
+<td>The Price amount excluding VAT</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td><code>string</code></td>
+<td>The abbreviation of the currency in which the Price is offered</td>
+</tr>
+<tr>
+<td><code>vat</code></td>
+<td><code>decimal</code></td>
+<td>The percentage of VAT</td>
+</tr>
+<tr>
+<td><code>amountIncVat</code></td>
+<td><code>decimal</code></td>
+<td>The Price amount including VAT</td>
+</tr>
+<tr>
+<td><code>discountType</code></td>
+<td><code>decimal</code></td>
+<td>The type of discount applied to the Price: <br> <code>percent</code> - a percentage of the Price amount <br> <code>value</code> - a fix value to be substracted from the Price amount</td>
+</tr>
+<tr>
+<td><code>discountAmount</code></td>
+<td><code>decimal</code></td>
+<td>The amount of the discount applied to the Price (either in percentage or in value)</td>
+</tr>
+<tr>
+<td><code>discountedPrice</code></td>
+<td><code>decimal</code></td>
+<td>The Price amount after discount</td>
+</tr>
+</tbody></table>
+<h2 id='duration-object'>Duration Object</h2>
+<p>A Duration can be defined with a set of values such as a number of <code>years</code>, <code>months</code>, <code>weeks</code>, <code>days</code>, <code>hours</code>, <code>minutes</code> and <code>seconds</code>. The value of the Duration is the cumulation of all those values, which is provided with the <code>canonical</code> field, which sums up the equivalent of all fields in seconds.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>canonical</code></td>
+<td><code>int</code></td>
+<td>The total number of seconds in the Duration</td>
+</tr>
+<tr>
+<td><code>years</code></td>
+<td><code>int</code></td>
+<td>The number of years of the Duration</td>
+</tr>
+<tr>
+<td><code>months</code></td>
+<td><code>int</code></td>
+<td>The number of months of the Duration</td>
+</tr>
+<tr>
+<td><code>weeks</code></td>
+<td><code>int</code></td>
+<td>The number of weeks of the Duration</td>
+</tr>
+<tr>
+<td><code>days</code></td>
+<td><code>int</code></td>
+<td>The number of days of the Duration</td>
+</tr>
+<tr>
+<td><code>hours</code></td>
+<td><code>int</code></td>
+<td>The number of hours of the Duration</td>
+</tr>
+<tr>
+<td><code>minutes</code></td>
+<td><code>int</code></td>
+<td>The number of minutes of the Duration</td>
+</tr>
+<tr>
+<td><code>seconds</code></td>
+<td><code>int</code></td>
+<td>The number of seconds of the Duration</td>
+</tr>
+</tbody></table>
+<h2 id='count-object'>Count Object</h2>
+<p>The Count details the number of sessions of a Course.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>present</code></td>
+<td><code>int</code></td>
+<td>The number of sessions that have already started and are not yet finished</td>
+</tr>
+<tr>
+<td><code>future</code></td>
+<td><code>int</code></td>
+<td>The number of sessions that have not started yet</td>
+</tr>
+<tr>
+<td><code>unscheduled</code></td>
+<td><code>int</code></td>
+<td>The number of sessions which dates have not been set</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Institut.io API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -455,35 +1544,19 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The resource requested cannot be accessed.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>Not Found -- The specified resource could not be found.</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests -- You&#39;re sending too many requests at a time.</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- We had a problem with our server. Please try again later.</td>
 </tr>
 <tr>
 <td>503</td>
@@ -495,9 +1568,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
