@@ -9,6 +9,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://www.institut.io' target='_blank'>Sign up for an account</a>
+  - <a href='https://api.institut.io/admin/login' target='_blank'>Login to your account</a>
 
 includes:
   - errors
@@ -86,7 +87,8 @@ Property | Type | Description
 ## Get All Courses
 
 ```shell
-curl "https://api.institut.io/courses"
+curl https://api.institut.io/courses  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -94,68 +96,214 @@ curl "https://api.institut.io/courses"
 ```json
 [
     {
-        "id": "238",
-        "score": 0,
-        "title": "Test",
-        "account": {
-            "id": 10,
-            "title": "Aldebaran OF"
-        },
+        "id": 2,
+        "title": "Animer des réunions en anglais",
+        "indexed": true,
         "owner": {
-            "id": 10,
-            "title": "Aldebaran OF"
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
         },
         "mode": {
-            "id": 0,
-            "value": "on site"
+            "id": 5,
+            "value": "cours par téléphone"
         },
+        "summary": "Pour s'adapter au mieux aux contraintes horaires des professionnels en activité, cette formation à l'animation de réunions professionnelles en anglais est dispensée sous la forme de conversations téléphoniques hebdomadaires avec un formateur natif.",
+        "goal": "Préparer et animer des séances de travail ou des réunions.\r\nFaire un exposé, une présentation face à un auditoire.\r\nParticiper à une téléconférence.",
+        "description": null,
+        "targetedSkills": "Etre à l'aise pour animer des réunions professionnelles.",
+        "programme": null,
         "coverImage": {
-            "file": "https://api.institut.io/uploads/images/5561fcb66eb7666a6247b94aa4dbae28.jpeg",
-            "thumb": "https://api.institut.io/uploads/images/_5561fcb66eb7666a6247b94aa4dbae28.jpeg",
-            "alt": "conseil"
+            "file": "https://api.institut.io/uploads/images/4a0d4bae4767206fdf5c492f3926f960.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_4a0d4bae4767206fdf5c492f3926f960.jpeg",
+            "alt": "Anglais"
+        },
+        "domains": [
+            {
+                "id": 5,
+                "title": "Anglais"
+            }
+        ],
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1572825600
+    },
+    {
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+            "alt": "Excel"
+        },
+        "domains": [
+            {
+                "id": 8,
+                "title": "Excel"
+            }
+        ],
+        "priceInter": {
+            "amount": "1200.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "1440.00"
         },
         "duration": {
             "canonical": 172800,
             "days": 2
         },
-        "count": {
-            "present": 1,
-            "future": 0,
-            "unscheduled": 0
-        }
-    },
-    {
-        "id": "242",
-        "score": 0,
-        "title": "Réseaux - serveurs",
-        "account": {
-            "id": 10,
-            "title": "Aldebaran OF",
-            "coverImage": {
-                "file": "https://api.institut.io/uploads/images/061d4c71f5191590504dfd4100af972d.jpeg",
-                "thumb": "https://api.institut.io/uploads/images/_061d4c71f5191590504dfd4100af972d.jpeg",
-                "alt": "excel"
-            }
-        },
-        "owner": {
-            "id": 11,
-            "title": "Sagittarius OF"
-        },
-        "mode": {
-            "id": 0,
-            "value": "on site"
-        },
-        "priceInter": {
-            "amount": "3200.00",
-            "currency": "EUR",
-            "vat": "20.00",
-            "amountIncVat": "3840.00"
+        "typicalLearningTime": {
+            "canonical": 172800,
+            "days": 2
         },
         "count": {
             "present": 0,
-            "future": 0,
-            "unscheduled": 1
-        }
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Management d'équipe",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "Une formation pour apprendre au manager à faire progresser collectivement son équipe, au service d'objectifs communs",
+        "goal": "Identifier les conditions d’efficacité du management de proximité\r\nMettre en œuvre les outils et méthodes pour animer une équipe au quotidien et se positionner en tant que responsable d’équipe",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>Se positionner en tant que manager</h2>\r\n<p>Introduction au&nbsp;management d'&eacute;quipe</p>\r\n<p>La posture du manager&nbsp;</p>\r\n<h2>Conna&icirc;tre&nbsp;les diff&eacute;rents styles de management</h2>\r\n<p>Identifier les styles de management</p>\r\n<p>Analyser les forces et les faiblesses de chacun de ces styles</p>\r\n<h2>Adopter en toute situation un comportement&nbsp;de manager</h2>\r\n<p>Revue des&nbsp;comportements&nbsp;&agrave; adopter&nbsp;en situation de crise</p>\r\n<p>S'affirmer simplement plut&ocirc;t que d'adopter un&nbsp;comportement de fuite, attaque ou manipulation</p>\r\n<h2>Exercer une autorit&eacute; positive en affirmant sa confiance en soi</h2>\r\n<p>Mettre en &eacute;vidence ses attitudes&nbsp;spontan&eacute;es</p>\r\n<p>Cr&eacute;er les conditions&nbsp;d'une relation de confiance&nbsp;avec ses collaborateurs</p>\r\n<h2>Organiser, animer et&nbsp;entra&icirc;ner son &eacute;quipe</h2>\r\n<p>Clarifier les r&ocirc;les dans l'&eacute;quipe et d&eacute;finir les objectifs</p>\r\n<p>Motiver les membres de son &eacute;quipe</p>\r\n<p>Manager d'anciens coll&egrave;gues et des coll&egrave;gues plus &acirc;g&eacute;s</p>\r\n<p>Am&eacute;liorer la performance de l'&eacute;quipe gr&acirc;ce &agrave; un management adapt&eacute;</p>\r\n<p>Orienter l'action collective</p>\r\n<h2>Communiquer efficacement</h2>\r\n<p>Adopter les attitudes ad&eacute;quates dans la relation de face-&agrave;-face</p>\r\n<p>Faire face aux conflits et situations difficiles</p>\r\n<p>Savoir formuler et recevoir une critique</p>",
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "alt": "Management"
+        },
+        "domains": [
+            {
+                "id": 3,
+                "title": "Management et leadership"
+            }
+        ],
+        "priceInter": {
+            "amount": "1800.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "2160.00",
+            "discountType": "percent",
+            "discountAmount": "15.00",
+            "discountedPrice": "1530.00"
+        },
+        "priceIntra": {
+            "amount": "6600.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "7920.00"
+        },
+        "duration": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "typicalLearningTime": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1557705600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 1,
+                "title": "Omega Formation Lyon",
+                "city": "Lyon",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            },
+            {
+                "id": 6,
+                "title": "Regus Bordeaux",
+                "city": "Bordeaux",
+                "country": "France"
+            }
+        ]
     }
 ]
 ```
@@ -175,7 +323,8 @@ id | Identifier of the course
 ## Get A Specific Course
 
 ```shell
-curl "https://api.institut.io/courses/243"
+curl https://api.institut.io/courses/1  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -183,63 +332,85 @@ curl "https://api.institut.io/courses/243"
 ```json
 [
     {
-        "id": "243",
-        "title": "Réseaux - serveurs",
-        "account": {
-            "id": 10,
-            "title": "Aldebaran OF",
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
             "coverImage": {
-                "file": "http://localhost:8000/uploads/images/4165c3046ee2b35cbf1b3c1a9e5b8cce.jpeg",
-                "thumb": "http://localhost:8000/uploads/images/_4165c3046ee2b35cbf1b3c1a9e5b8cce.jpeg",
-                "alt": "moon"
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
             }
         },
-        "owner": {
-            "id": 11,
-            "title": "Sagittarius OF"
-        },
         "mode": {
-            "id": 0,
-            "value": "on site"
+            "id": 1,
+            "value": "onsite"
         },
-        "summary": "En quelques mots, voici un résumé",
-        "goal": "Azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn \r\n\r\nAzerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn azerty qsdfgh wxcvbn",
-        "description": "CEtte formation est très intéressante, elle porte sur les réseaux et serveurs",
-        "targetedSkills": "Savoir gérer les serveurs",
-        "programme": "<p>Azerty</p>\r\n<p><em>Lorem ipsum</em></p>\r\n<p>Qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm&nbsp;qsdfghjklm</p>\r\n<p>&nbsp;</p>\r\n<p><strong>Lorem</strong></p>\r\n<p>Ipsum</p>",
+        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
         "coverImage": {
-            "file": "http://localhost:8000/uploads/images/e2e624085ca161c9fb7994d22eea520f.jpeg",
-            "thumb": "http://localhost:8000/uploads/images/_e2e624085ca161c9fb7994d22eea520f.jpeg",
-            "alt": "Hello, this is a greeting card for year 2013"
+            "file": "https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+            "alt": "Excel"
         },
+        "domains": [
+            {
+                "id": 8,
+                "title": "Excel"
+            }
+        ],
         "priceInter": {
-            "amount": "2000.00",
-            "currency": "USD",
-            "vat": "10.00",
-            "amountIncVat": "2200.00",
-            "discountType": "percent",
-            "discountAmount": "15.00",
-            "discountedPrice": "1700.00"
-        },
-        "priceIntra": {
-            "amount": "1000.00",
+            "amount": "1200.00",
             "currency": "EUR",
             "vat": "20.00",
-            "amountIncVat": "1200.00"
+            "amountIncVat": "1440.00"
         },
         "duration": {
-            "canonical": 121438042,
-            "years": 3,
-            "days": 25,
-            "hours": 12,
-            "minutes": 47,
-            "seconds": 22
+            "canonical": 172800,
+            "days": 2
+        },
+        "typicalLearningTime": {
+            "canonical": 172800,
+            "days": 2
         },
         "count": {
-            "present": 2,
-            "future": 0,
-            "unscheduled": 1
-        }
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ]
     }
 ]
 ```
@@ -286,7 +457,8 @@ Name | Type | Description
 The "Get All Courses" endpoint can be queried with pagination parameters.
 
 ```shell
-curl "https://api.institut.io/courses?paginate[from]=20&paginate[size]=10"
+curl -g "https://api.institut.io/courses?paginate[from]=20&paginate[size]=10"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 >The above command returns 10 Courses ranking from 21 to 30 (if the query without pagination parameters should return more than 30 results).
@@ -307,7 +479,8 @@ Parameter | Type | Description
 ## Search An Expression
 
 ```shell
-curl "https://api.institut.io/courses?expression=test"
+curl "https://api.institut.io/courses?expression=apprendre"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -315,35 +488,176 @@ curl "https://api.institut.io/courses?expression=test"
 ```json
 [
     {
-        "id": "238",
-        "score": 2.1576157,
-        "title": "Test",
-        "account": {
-            "id": 10,
-            "title": "Aldebaran OF"
-        },
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
         "owner": {
-            "id": 10,
-            "title": "Aldebaran OF"
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "http://localhost:8000/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "http://localhost:8000/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
         },
         "mode": {
-            "id": 0,
-            "value": "on site"
+            "id": 1,
+            "value": "onsite"
         },
+        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
         "coverImage": {
-            "file": "https://api.institut.io/uploads/images/5561fcb66eb7666a6247b94aa4dbae28.jpeg",
-            "thumb": "https://api.institut.io/uploads/images/_5561fcb66eb7666a6247b94aa4dbae28.jpeg",
-            "alt": "conseil"
+            "file": "http://localhost:8000/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+            "thumb": "http://localhost:8000/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+            "alt": "Excel"
+        },
+        "domains": [
+            {
+                "id": 8,
+                "title": "Excel"
+            }
+        ],
+        "priceInter": {
+            "amount": "1200.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "1440.00"
         },
         "duration": {
             "canonical": 172800,
             "days": 2
         },
+        "typicalLearningTime": {
+            "canonical": 172800,
+            "days": 2
+        },
         "count": {
-            "present": 1,
-            "future": 0,
+            "present": 0,
+            "future": 1,
             "unscheduled": 0
-        }
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ],
+        "score": 6.822408
+    },
+    {
+        "id": 3,
+        "title": "Management d'équipe",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "http://localhost:8000/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "http://localhost:8000/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "Une formation pour apprendre au manager à faire progresser collectivement son équipe, au service d'objectifs communs",
+        "goal": "Identifier les conditions d’efficacité du management de proximité\r\nMettre en œuvre les outils et méthodes pour animer une équipe au quotidien et se positionner en tant que responsable d’équipe",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>Se positionner en tant que manager</h2>\r\n<p>Introduction au&nbsp;management d'&eacute;quipe</p>\r\n<p>La posture du manager&nbsp;</p>\r\n<h2>Conna&icirc;tre&nbsp;les diff&eacute;rents styles de management</h2>\r\n<p>Identifier les styles de management</p>\r\n<p>Analyser les forces et les faiblesses de chacun de ces styles</p>\r\n<h2>Adopter en toute situation un comportement&nbsp;de manager</h2>\r\n<p>Revue des&nbsp;comportements&nbsp;&agrave; adopter&nbsp;en situation de crise</p>\r\n<p>S'affirmer simplement plut&ocirc;t que d'adopter un&nbsp;comportement de fuite, attaque ou manipulation</p>\r\n<h2>Exercer une autorit&eacute; positive en affirmant sa confiance en soi</h2>\r\n<p>Mettre en &eacute;vidence ses attitudes&nbsp;spontan&eacute;es</p>\r\n<p>Cr&eacute;er les conditions&nbsp;d'une relation de confiance&nbsp;avec ses collaborateurs</p>\r\n<h2>Organiser, animer et&nbsp;entra&icirc;ner son &eacute;quipe</h2>\r\n<p>Clarifier les r&ocirc;les dans l'&eacute;quipe et d&eacute;finir les objectifs</p>\r\n<p>Motiver les membres de son &eacute;quipe</p>\r\n<p>Manager d'anciens coll&egrave;gues et des coll&egrave;gues plus &acirc;g&eacute;s</p>\r\n<p>Am&eacute;liorer la performance de l'&eacute;quipe gr&acirc;ce &agrave; un management adapt&eacute;</p>\r\n<p>Orienter l'action collective</p>\r\n<h2>Communiquer efficacement</h2>\r\n<p>Adopter les attitudes ad&eacute;quates dans la relation de face-&agrave;-face</p>\r\n<p>Faire face aux conflits et situations difficiles</p>\r\n<p>Savoir formuler et recevoir une critique</p>",
+        "coverImage": {
+            "file": "http://localhost:8000/uploads/images/d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "thumb": "http://localhost:8000/uploads/images/_d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "alt": "Management"
+        },
+        "domains": [
+            {
+                "id": 3,
+                "title": "Management et leadership"
+            }
+        ],
+        "priceInter": {
+            "amount": "1800.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "2160.00",
+            "discountType": "percent",
+            "discountAmount": "15.00",
+            "discountedPrice": "1530.00"
+        },
+        "priceIntra": {
+            "amount": "6600.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "7920.00"
+        },
+        "duration": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "typicalLearningTime": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1557705600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 1,
+                "title": "Omega Formation Lyon",
+                "city": "Lyon",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            },
+            {
+                "id": 6,
+                "title": "Regus Bordeaux",
+                "city": "Bordeaux",
+                "country": "France"
+            }
+        ],
+        "score": 2.5891387
     }
 ]
 ```
@@ -375,13 +689,139 @@ Name | Type | Description
 ### Using Domain titles
 
 ```shell
-curl "https://api.institut.io/courses?domains[titles]=Commercial,Agilité"
+curl -g "https://api.institut.io/courses?domains[titles]=Bureautique,Langues"  \
+  -H "Authorization: ZKXvA9fE"
+
+curl -g "https://api.institut.io/courses?domains[ids]=7,4"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
-> The above command returns JSON structured like this:
+> The two above commands return the same JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": 2,
+        "title": "Animer des réunions en anglais",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 5,
+            "value": "cours par téléphone"
+        },
+        "summary": "Pour s'adapter au mieux aux contraintes horaires des professionnels en activité, cette formation à l'animation de réunions professionnelles en anglais est dispensée sous la forme de conversations téléphoniques hebdomadaires avec un formateur natif.",
+        "goal": "Préparer et animer des séances de travail ou des réunions.\r\nFaire un exposé, une présentation face à un auditoire.\r\nParticiper à une téléconférence.",
+        "description": null,
+        "targetedSkills": "Etre à l'aise pour animer des réunions professionnelles.",
+        "programme": null,
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/4a0d4bae4767206fdf5c492f3926f960.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_4a0d4bae4767206fdf5c492f3926f960.jpeg",
+            "alt": "Anglais"
+        },
+        "domains": [
+            {
+                "id": 5,
+                "title": "Anglais"
+            }
+        ],
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1572825600
+    },
+    {
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+            "alt": "Excel"
+        },
+        "domains": [
+            {
+                "id": 8,
+                "title": "Excel"
+            }
+        ],
+        "priceInter": {
+            "amount": "1200.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "1440.00"
+        },
+        "duration": {
+            "canonical": 172800,
+            "days": 2
+        },
+        "typicalLearningTime": {
+            "canonical": 172800,
+            "days": 2
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ]
+    }
+]
 ```
 
 This endpoint retrieves all Courses linked to a Domain or one of its children.
@@ -398,16 +838,6 @@ Parameter | Type | Description
 
 ### Using Domain IDs
 
-```shell
-curl "https://api.institut.io/courses?domains[ids]=4,14"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
-```
-
 This endpoint retrieves all Courses linked to a Domain or one of its children.
 
 ### HTTP Request
@@ -423,13 +853,185 @@ Parameter | Type | Description
 ## Filter By Mode
 
 ```shell
-curl "https://api.institut.io/courses?modes=onsite,mooc"
+curl https://api.institut.io/courses?modes=onsite,mooc  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+            "alt": "Excel"
+        },
+        "domains": [
+            {
+                "id": 8,
+                "title": "Excel"
+            }
+        ],
+        "priceInter": {
+            "amount": "1200.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "1440.00"
+        },
+        "duration": {
+            "canonical": 172800,
+            "days": 2
+        },
+        "typicalLearningTime": {
+            "canonical": 172800,
+            "days": 2
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Management d'équipe",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        },
+        "summary": "Une formation pour apprendre au manager à faire progresser collectivement son équipe, au service d'objectifs communs",
+        "goal": "Identifier les conditions d’efficacité du management de proximité\r\nMettre en œuvre les outils et méthodes pour animer une équipe au quotidien et se positionner en tant que responsable d’équipe",
+        "description": null,
+        "targetedSkills": null,
+        "programme": "<h2>Se positionner en tant que manager</h2>\r\n<p>Introduction au&nbsp;management d'&eacute;quipe</p>\r\n<p>La posture du manager&nbsp;</p>\r\n<h2>Conna&icirc;tre&nbsp;les diff&eacute;rents styles de management</h2>\r\n<p>Identifier les styles de management</p>\r\n<p>Analyser les forces et les faiblesses de chacun de ces styles</p>\r\n<h2>Adopter en toute situation un comportement&nbsp;de manager</h2>\r\n<p>Revue des&nbsp;comportements&nbsp;&agrave; adopter&nbsp;en situation de crise</p>\r\n<p>S'affirmer simplement plut&ocirc;t que d'adopter un&nbsp;comportement de fuite, attaque ou manipulation</p>\r\n<h2>Exercer une autorit&eacute; positive en affirmant sa confiance en soi</h2>\r\n<p>Mettre en &eacute;vidence ses attitudes&nbsp;spontan&eacute;es</p>\r\n<p>Cr&eacute;er les conditions&nbsp;d'une relation de confiance&nbsp;avec ses collaborateurs</p>\r\n<h2>Organiser, animer et&nbsp;entra&icirc;ner son &eacute;quipe</h2>\r\n<p>Clarifier les r&ocirc;les dans l'&eacute;quipe et d&eacute;finir les objectifs</p>\r\n<p>Motiver les membres de son &eacute;quipe</p>\r\n<p>Manager d'anciens coll&egrave;gues et des coll&egrave;gues plus &acirc;g&eacute;s</p>\r\n<p>Am&eacute;liorer la performance de l'&eacute;quipe gr&acirc;ce &agrave; un management adapt&eacute;</p>\r\n<p>Orienter l'action collective</p>\r\n<h2>Communiquer efficacement</h2>\r\n<p>Adopter les attitudes ad&eacute;quates dans la relation de face-&agrave;-face</p>\r\n<p>Faire face aux conflits et situations difficiles</p>\r\n<p>Savoir formuler et recevoir une critique</p>",
+        "coverImage": {
+            "file": "https://api.institut.io/uploads/images/d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "thumb": "https://api.institut.io/uploads/images/_d18790cc59ed231f3ad70d1e27b96411.jpeg",
+            "alt": "Management"
+        },
+        "domains": [
+            {
+                "id": 3,
+                "title": "Management et leadership"
+            }
+        ],
+        "priceInter": {
+            "amount": "1800.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "2160.00",
+            "discountType": "percent",
+            "discountAmount": "15.00",
+            "discountedPrice": "1530.00"
+        },
+        "priceIntra": {
+            "amount": "6600.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "7920.00"
+        },
+        "duration": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "typicalLearningTime": {
+            "canonical": 259200,
+            "days": 3
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1557705600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 1,
+                "title": "Omega Formation Lyon",
+                "city": "Lyon",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            },
+            {
+                "id": 6,
+                "title": "Regus Bordeaux",
+                "city": "Bordeaux",
+                "country": "France"
+            }
+        ]
+    }
+]
 ```
 
 This endpoint retrieves all Courses which Mode matches the request.
@@ -447,33 +1049,14 @@ Parameter | Type | Description
 ## Filter By Date
 
 ```shell
-curl "https://api.institut.io/courses?date[start]=1541238178"
-```
+curl -g "https://api.institut.io/courses?dates[start]=1541238178"  \
+  -H "Authorization: ZKXvA9fE"
 
-> The above command returns JSON structured like this:
+curl -g "https://api.institut.io/courses?dates[end]=1541238178"  \
+  -H "Authorization: ZKXvA9fE"
 
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?date[end]=1541238178"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?date[start]=1541238178&date[end]=1541238178"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
+curl -g "https://api.institut.io/courses?dates[start]=1541238178&dates[end]=1541238178"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 This endpoint retrieves all Courses which scheduled dates match the request.
@@ -498,43 +1081,17 @@ Parameter | Type | Description
 ## Filter By Price
 
 ```shell
-curl "https://api.institut.io/courses?price[min]=1000"
-```
+curl -g "https://api.institut.io/courses?price[min]=1000"  \
+  -H "Authorization: ZKXvA9fE"
 
-> The above command returns JSON structured like this:
+curl -g "https://api.institut.io/courses?price[max]=2000"  \
+  -H "Authorization: ZKXvA9fE"
 
-```json
-[]
-```
+curl -g "https://api.institut.io/courses?price[min]=1000&price[max]=2000"  \
+  -H "Authorization: ZKXvA9fE"
 
-```shell
-curl "https://api.institut.io/courses?price[max]=2000"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?price[min]=1000&price[max]=2000"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?price[type]=inter&price[max]=2000"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
+curl -g "https://api.institut.io/courses?price[type]=inter&price[max]=2000"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 This endpoint retrieves all Courses which Price(s) match the request.
@@ -560,33 +1117,14 @@ Parameter | Type | Description
 ## Filter By Duration
 
 ```shell
-curl "https://api.institut.io/courses?duration[min]=100000"
-```
+curl -g "https://api.institut.io/courses?duration[min]=100000"  \
+  -H "Authorization: ZKXvA9fE"
 
-> The above command returns JSON structured like this:
+curl -g "https://api.institut.io/courses?duration[max]=500000"  \
+  -H "Authorization: ZKXvA9fE"
 
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?duration[max]=500000"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
-```
-
-```shell
-curl "https://api.institut.io/courses?duration[min]=100000&duration[max]=500000"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[]
+curl -g "https://api.institut.io/courses?duration[min]=100000&duration[max]=500000"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 This endpoint retrieves all Courses which Duration matches the request.
@@ -609,23 +1147,182 @@ Parameter | Type | Description
 ## Restrict Course Info
 
 ```shell
-curl "https://api.institut.io/courses?display=mode"
+curl "https://api.institut.io/courses?display=mode"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": 2,
+        "title": "Animer des réunions en anglais",
+        "indexed": true,
+        "mode": {
+            "id": 5,
+            "value": "cours par téléphone"
+        }
+    },
+    {
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        }
+    },
+    {
+        "id": 3,
+        "title": "Management d'équipe",
+        "indexed": true,
+        "mode": {
+            "id": 1,
+            "value": "onsite"
+        }
+    }
+]
 ```
 
 ```shell
-curl "https://api.institut.io/courses?display=owner,priceinter,count,dates,premises"
+curl "https://api.institut.io/courses?display=owner,priceinter,count,dates,premises"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": 2,
+        "title": "Animer des réunions en anglais",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1572825600
+    },
+    {
+        "id": 1,
+        "title": "Excel Initiation - Tableaux de calculs simples",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "priceInter": {
+            "amount": "1200.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "1440.00"
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextStartdate": 1560211200,
+        "nextOpendate": 1560729600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 3,
+                "title": "Omega Formation Lille",
+                "city": "Lille",
+                "country": "France"
+            },
+            {
+                "id": 4,
+                "title": "Omega Formation Nantes",
+                "city": "Nantes",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Management d'équipe",
+        "indexed": true,
+        "owner": {
+            "id": 1,
+            "title": "Omega Formation",
+            "coverImage": {
+                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+                "alt": "Omega Formation"
+            }
+        },
+        "priceInter": {
+            "amount": "1800.00",
+            "currency": "EUR",
+            "vat": "20.00",
+            "amountIncVat": "2160.00",
+            "discountType": "percent",
+            "discountAmount": "15.00",
+            "discountedPrice": "1530.00"
+        },
+        "count": {
+            "present": 0,
+            "future": 1,
+            "unscheduled": 0
+        },
+        "nextOpendate": 1557705600,
+        "premises": [
+            {
+                "id": 2,
+                "title": "Omega Group",
+                "city": "Paris",
+                "country": "France"
+            },
+            {
+                "id": 1,
+                "title": "Omega Formation Lyon",
+                "city": "Lyon",
+                "country": "France"
+            },
+            {
+                "id": 5,
+                "title": "Regus Marseille Les Docks",
+                "city": "Marseille",
+                "country": "France"
+            },
+            {
+                "id": 6,
+                "title": "Regus Bordeaux",
+                "city": "Bordeaux",
+                "country": "France"
+            }
+        ]
+    }
+]
 ```
 
 
@@ -647,6 +1344,8 @@ Parameter | Type | Description
 
 # Sessions
 
+This section is currently being updated.
+
 A Session is a scheduled occurrence of a Course.
 
 ## Get All Sessions Of A Course
@@ -661,7 +1360,8 @@ A Domain can have a parent and several children.
 ## Get All Domains
 
 ```shell
-curl "https://api.institut.io/domains"
+curl "https://api.institut.io/domains"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -669,39 +1369,58 @@ curl "https://api.institut.io/domains"
 ```json
 [
     {
-        "id": "13",
-        "title": "Administration",
-        "children": []
-    },
-    {
-        "id": "4",
-        "title": "Commercial",
+        "id": "7",
+        "title": "Bureautique",
         "children": [
             {
-                "id": 6,
-                "title": "Achats"
+                "id": 8,
+                "title": "Excel"
             },
             {
-                "id": 5,
-                "title": "Vente"
+                "id": 9,
+                "title": "PowerPoint"
             }
         ]
     },
     {
-        "id": "7",
+        "id": "4",
+        "title": "Langues",
+        "children": [
+            {
+                "id": 5,
+                "title": "Anglais"
+            },
+            {
+                "id": 6,
+                "title": "Espagnol"
+            }
+        ]
+    },
+    {
+        "id": "1",
         "title": "Management",
         "children": [
             {
-                "id": 14,
-                "title": "Agilité"
+                "id": 3,
+                "title": "Management et leadership"
             },
             {
-                "id": 9,
-                "title": "Leadership"
+                "id": 2,
+                "title": "Management transverse"
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "title": "Ressources humaines",
+        "children": [
+            {
+                "id": 11,
+                "title": "Entretien annuel"
             },
             {
-                "id": 8,
-                "title": "Négociation"
+                "id": 12,
+                "title": "Paie"
             }
         ]
     }
@@ -729,7 +1448,8 @@ A Premise is a location linked to an Account: training center, office, etc.
 ## Get All Premises
 
 ```shell
-curl "https://api.institut.io/premises"
+curl "https://api.institut.io/premises"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -737,42 +1457,142 @@ curl "https://api.institut.io/premises"
 ```json
 [
     {
-        "id": "8",
-        "title": "Aldebaran - Centre de Paris",
-        "type": "training center",
+        "id": "2",
+        "title": "Omega Group",
+        "type": "headquarter",
         "rank": 1,
-        "description": "Ceci est \r\nun test",
-        "address1": "12 bd de la Gare",
-        "address2": "BP 73894",
-        "address3": null,
-        "zipcode": "75001",
+        "description": "Siège social du groupe Omega",
+        "address": {
+            "line1": "14 boulevard Montmartre",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "75009",
         "city": "Paris",
         "state": null,
         "country": "France",
-        "latitude": null,
-        "longitude": null,
-        "email": "paris@aldebaran.fr",
-        "phone": "04627291947",
-        "fax": "0628294820"
+        "coordinates": {
+            "latitude": "49",
+            "longitude": "2"
+        },
+        "email": "accueil@omega-formation.com",
+        "phone": "01 53 24 60 25",
+        "fax": null
     },
     {
-        "id": "7",
-        "title": "Aldebaran Headquarter",
-        "type": "headquarter",
-        "rank": 3,
-        "description": "Il s'agit du siège social",
-        "address1": "15 rue du Puits",
-        "address2": "Route de la Rivière",
-        "address3": "BP12983",
-        "zipcode": "13245",
-        "city": "Marseille",
-        "state": "Bouches du Rhône",
+        "id": "3",
+        "title": "Omega Formation Lille",
+        "type": "training center",
+        "rank": 2,
+        "description": null,
+        "address": {
+            "line1": "108 rue Nationale",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "59000",
+        "city": "Lille",
+        "state": null,
         "country": "France",
-        "latitude": null,
-        "longitude": null,
-        "email": "hq@aldebaran.fr",
-        "phone": "0394857823",
-        "fax": "0328475629"
+        "coordinates": {
+            "latitude": "51",
+            "longitude": "3"
+        },
+        "email": "lille@omega-formation.com",
+        "phone": "03 20 10 01 18",
+        "fax": null
+    },
+    {
+        "id": "1",
+        "title": "Omega Formation Lyon",
+        "type": "training center",
+        "rank": 3,
+        "description": "Centre de formation de Omega Formation à Lyon",
+        "address": {
+            "line1": "283 Rue Garibaldi",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "69003",
+        "city": "Lyon",
+        "state": null,
+        "country": "France",
+        "coordinates": {
+            "latitude": "46",
+            "longitude": "5"
+        },
+        "email": "lyon@omega-formation.com",
+        "phone": "0482538627",
+        "fax": null
+    },
+    {
+        "id": "4",
+        "title": "Omega Formation Nantes",
+        "type": "training center",
+        "rank": 4,
+        "description": null,
+        "address": {
+            "line1": "13 Rue Jean Jacques Rousseau",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "44000",
+        "city": "Nantes",
+        "state": null,
+        "country": "France",
+        "coordinates": {
+            "latitude": "47",
+            "longitude": "-2"
+        },
+        "email": "nantes@omega-formation.com",
+        "phone": "02 40 69 25 27",
+        "fax": null
+    },
+    {
+        "id": "5",
+        "title": "Regus Marseille Les Docks",
+        "type": "training center",
+        "rank": 5,
+        "description": "Centre d'affaires",
+        "address": {
+            "line1": "10 Place de la Joliette",
+            "line2": "Cedex 2, Les Docks - Atrium 10.6",
+            "line3": null
+        },
+        "zipcode": "13567",
+        "city": "Marseille",
+        "state": null,
+        "country": "France",
+        "coordinates": {
+            "latitude": "43",
+            "longitude": "5"
+        },
+        "email": "marseille-lesdocks@regus.fr",
+        "phone": "04 91 13 45 12",
+        "fax": null
+    },
+    {
+        "id": "6",
+        "title": "Regus Bordeaux",
+        "type": "training center",
+        "rank": 6,
+        "description": null,
+        "address": {
+            "line1": "Rue Charles Domercq",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "33082",
+        "city": "Bordeaux",
+        "state": null,
+        "country": "France",
+        "coordinates": {
+            "latitude": "45",
+            "longitude": "-1"
+        },
+        "email": "bordeaux@regus.fr",
+        "phone": "05 56 64 42 52",
+        "fax": null
     }
 ]
 ```
@@ -790,7 +1610,8 @@ The response fields for this endpoint are the same as the response fields for th
 ## Get A Specific Premise
 
 ```shell
-curl "https://api.institut.io/premises/6"
+curl "https://api.institut.io/premises/1"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
@@ -798,22 +1619,26 @@ curl "https://api.institut.io/premises/6"
 ```json
 [
     {
-        "id": "6",
-        "title": "hello",
+        "id": "1",
+        "title": "Omega Formation Lyon",
         "type": "training center",
-        "rank": null,
-        "description": null,
-        "address1": "1 rue de la Gare",
-        "address2": null,
-        "address3": null,
-        "zipcode": "31000",
-        "city": "TOULOUSE",
+        "rank": 3,
+        "description": "Centre de formation de Omega Formation à Lyon",
+        "address": {
+            "line1": "283 Rue Garibaldi",
+            "line2": null,
+            "line3": null
+        },
+        "zipcode": "69003",
+        "city": "Lyon",
         "state": null,
         "country": "France",
-        "latitude": null,
-        "longitude": null,
-        "email": "johndoe@gmail.com",
-        "phone": "0123456789",
+        "coordinates": {
+            "latitude": "46",
+            "longitude": "5"
+        },
+        "email": "lyon@omega-formation.com",
+        "phone": "0482538627",
         "fax": null
     }
 ]
@@ -856,23 +1681,105 @@ Name | Type | Description
 ## Restrict Premise Info
 
 ```shell
-curl "https://api.institut.io/premises?display=city"
+curl "https://api.institut.io/premises?display=city"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": "2",
+        "city": "Paris"
+    },
+    {
+        "id": "3",
+        "city": "Lille"
+    },
+    {
+        "id": "1",
+        "city": "Lyon"
+    },
+    {
+        "id": "4",
+        "city": "Nantes"
+    },
+    {
+        "id": "5",
+        "city": "Marseille"
+    },
+    {
+        "id": "6",
+        "city": "Bordeaux"
+    }
+]
 ```
 
 ```shell
-curl "https://api.institut.io/premises?display=title,address"
+curl "https://api.institut.io/premises?display=title,address"  \
+  -H "Authorization: ZKXvA9fE"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[]
+[
+    {
+        "id": "2",
+        "title": "Omega Group",
+        "address": {
+            "line1": "14 boulevard Montmartre",
+            "line2": null,
+            "line3": null
+        }
+    },
+    {
+        "id": "3",
+        "title": "Omega Formation Lille",
+        "address": {
+            "line1": "108 rue Nationale",
+            "line2": null,
+            "line3": null
+        }
+    },
+    {
+        "id": "1",
+        "title": "Omega Formation Lyon",
+        "address": {
+            "line1": "283 Rue Garibaldi",
+            "line2": null,
+            "line3": null
+        }
+    },
+    {
+        "id": "4",
+        "title": "Omega Formation Nantes",
+        "address": {
+            "line1": "13 Rue Jean Jacques Rousseau",
+            "line2": null,
+            "line3": null
+        }
+    },
+    {
+        "id": "5",
+        "title": "Regus Marseille Les Docks",
+        "address": {
+            "line1": "10 Place de la Joliette",
+            "line2": "Cedex 2, Les Docks - Atrium 10.6",
+            "line3": null
+        }
+    },
+    {
+        "id": "6",
+        "title": "Regus Bordeaux",
+        "address": {
+            "line1": "Rue Charles Domercq",
+            "line2": null,
+            "line3": null
+        }
+    }
+]
 ```
 
 
