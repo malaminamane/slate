@@ -325,6 +325,9 @@
                   <li>
                     <a href="#count-object" class="toc-h2 toc-link" data-title="Count Object">Count Object</a>
                   </li>
+                  <li>
+                    <a href="#timespan-object" class="toc-h2 toc-link" data-title="Timespan Object">Timespan Object</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -332,7 +335,8 @@
           </li>
       </ul>
         <ul class="toc-footer">
-            <li><a href='https://www.institut.io' target='_blank'>Sign up for an account</a></li>
+            <li><a href='https://www.institut.io' target='_blank'>Visit Institut.io's website</a></li>
+            <li><a href='https://api.institut.io/admin/register' target='_blank'>Sign up for an account</a></li>
             <li><a href='https://api.institut.io/admin/login' target='_blank'>Login to your account</a></li>
         </ul>
     </div>
@@ -391,7 +395,9 @@ curl https://api.institut.io/last_part_of_url  <span class="se">\</span>
 Institut.io operates exclusively over HTTPS. Requests that are received over HTTP without encryption will fail.
 </aside>
 <h1 id='accounts'>Accounts</h1><h2 id='account-creation'>Account Creation</h2>
-<p>An Account can be created free of payment, capture or any kind of commitment, using the <a href="https://www.institut.io" target="&#95;blank">Institut.io&#39;s website</a>.</p>
+<p>An Account can be created free of payment, capture or any kind of commitment, using <a href="https://api.institut.io/admin/register/" target="&#95;blank">Institut.io&#39;s registration page</a>.</p>
+
+<p>For more information about Institut.io&#39;s benefits and offers, please visit <a href="https://www.institut.io" target="&#95;blank">Institut.io&#39;s website</a>.</p>
 <h2 id='account-object'>Account Object</h2>
 <p>The Account object contains information about an Institut.io account.</p>
 
@@ -641,106 +647,94 @@ Institut.io operates exclusively over HTTPS. Requests that are received over HTT
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.institut.io/courses</code></p>
 <h3 id='response-fields'>Response Fields</h3>
-<table><thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>Identifier of the course</td>
-</tr>
-</tbody></table>
+<p>The response fields for this endpoint are the same as the response fields for <a href="#get-a-specific-course">the &quot;Get A Specific Course&quot; endpoint</a>.</p>
 <h2 id='get-a-specific-course'>Get A Specific Course</h2><pre class="highlight shell tab-shell"><code>curl https://api.institut.io/courses/1  <span class="se">\</span>
   -H <span class="s2">"Authorization: ZKXvA9fE"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel Initiation - Tableaux de calculs simples"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"indexed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel Initiation - Tableaux de calculs simples"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"indexed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onsite"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office."</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maîtriser les fonctionnalités fondamentales d'Excel</span><span class="se">\r\n</span><span class="s2">Concevoir et exploiter des tableaux en utilisant des formules de calculs simples</span><span class="se">\r\n</span><span class="s2">Illustrer des valeurs avec un graphique</span><span class="se">\r\n</span><span class="s2">Utiliser des listes de données </span><span class="se">\r\n</span><span class="s2">Mettre en forme les données</span><span class="se">\r\n</span><span class="s2">Mettre en page et imprimer un tableau dans Excel"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"targetedSkills"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"programme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;h2&gt;D&amp;eacute;couvrir Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;couverte du&amp;nbsp;tableur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;G&amp;eacute;n&amp;eacute;ralit&amp;eacute;s sur l'environnement&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Le&amp;nbsp;ruban&amp;nbsp;fichier&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Ouverture d'un classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Gestion&amp;nbsp;des&amp;nbsp;fen&amp;ecirc;tres&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement dans un&amp;nbsp;classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saisie de&amp;nbsp;donn&amp;eacute;es&amp;nbsp;dans&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Modification du&amp;nbsp;contenu d'une cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;S&amp;eacute;lection et&amp;nbsp;effacement de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Annulation et&amp;nbsp;r&amp;eacute;tablissement d'une action&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Enregistrement d'un classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;La&amp;nbsp;zone </span><span class="se">\"</span><span class="s2">Dites-nous ce&amp;nbsp;que vous voulez faire</span><span class="se">\"</span><span class="s2">&amp;nbsp;: outil d'aide &amp;agrave;&amp;nbsp;la&amp;nbsp;r&amp;eacute;alisation d'actions*&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;R&amp;eacute;aliser les&amp;nbsp;premiers calculs&amp;nbsp;avec&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saisie d'une formule de&amp;nbsp;calcul&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calcul d'une somme ou&amp;nbsp;autre statistique simple&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calcul d'un pourcentage&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;R&amp;eacute;f&amp;eacute;rence absolue dans une&amp;nbsp;formule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie vers des&amp;nbsp;cellules adjacentes&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie vers des&amp;nbsp;cellules non adjacentes&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Pr&amp;eacute;senter les&amp;nbsp;donn&amp;eacute;es&amp;nbsp;sous&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Formats num&amp;eacute;riques simples&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Police et&amp;nbsp;taille des&amp;nbsp;caract&amp;egrave;res&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Alignement des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Couleur des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Bordure des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Utiliser les&amp;nbsp;th&amp;egrave;mes et&amp;nbsp;les styles pour la&amp;nbsp;mise en forme&amp;nbsp;dans&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Capture d'&amp;eacute;cran&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;G&amp;eacute;rer les&amp;nbsp;cellules&amp;nbsp;dans&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Zoom d'affichage&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Le&amp;nbsp;mode plein &amp;eacute;cran&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Largeur de&amp;nbsp;colonne / hauteur de&amp;nbsp;ligne&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Insertion / suppression de&amp;nbsp;lignes, de&amp;nbsp;colonnes...&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie rapide de&amp;nbsp;la mise en forme d'une cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Fusion de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Orientation&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Affichage de&amp;nbsp;plusieurs lignes dans une&amp;nbsp;cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Conserver la&amp;nbsp;copie&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie de&amp;nbsp;r&amp;eacute;sultats de&amp;nbsp;calcul&amp;nbsp;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Imprimer et&amp;nbsp;diffuser un&amp;nbsp;classeur&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Mise en page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Aper&amp;ccedil;u et&amp;nbsp;impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Titres de&amp;nbsp;colonnes / lignes r&amp;eacute;p&amp;eacute;t&amp;eacute;s &amp;agrave;&amp;nbsp;l'impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Masquage des&amp;nbsp;&amp;eacute;l&amp;eacute;ments d'une feuille&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Zone d'impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saut de&amp;nbsp;page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;En-t&amp;ecirc;te et&amp;nbsp;pied de&amp;nbsp;page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Pr&amp;eacute;sentation d&amp;rsquo;un tableau en ligne&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Pr&amp;eacute;senter les&amp;nbsp;chiffres avec des&amp;nbsp;graphiques&amp;nbsp;simples&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Outil d'aide au&amp;nbsp;choix du&amp;nbsp;type de&amp;nbsp;graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation et&amp;nbsp;d&amp;eacute;placement d'un graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Styles&amp;nbsp;et&amp;nbsp;dispositions&amp;nbsp;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;S&amp;eacute;lection et&amp;nbsp;mise&amp;nbsp;en&amp;nbsp;forme&amp;nbsp;des &amp;eacute;l&amp;eacute;ments d'un graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Modification des&amp;nbsp;&amp;eacute;l&amp;eacute;ments texte du&amp;nbsp;graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;L&amp;eacute;gende et&amp;nbsp;zone de&amp;nbsp;tra&amp;ccedil;age&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Utiliser des&amp;nbsp;listes&amp;nbsp;de&amp;nbsp;donn&amp;eacute;es&amp;nbsp;avec&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation d'un tableau de&amp;nbsp;type liste de&amp;nbsp;donn&amp;eacute;es&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Utilisation du&amp;nbsp;remplissage instantan&amp;eacute;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Tris&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Filtres automatiques&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calculs automatiques dans un&amp;nbsp;tableau&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Filtrer dynamiquement avec les&amp;nbsp;Segments&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Personnaliser les&amp;nbsp;feuilles des&amp;nbsp;classeurs&amp;nbsp;dans&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation d'un nouveau classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Nom d'une feuille, couleur de&amp;nbsp;l'onglet&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Insertion, suppression de&amp;nbsp;feuilles&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement, copie et&amp;nbsp;masquage d'une feuille&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;&amp;nbsp;&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel"</span><span class="w">
+            </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"mode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onsite"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"goal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maîtriser les fonctionnalités fondamentales d'Excel</span><span class="se">\r\n</span><span class="s2">Concevoir et exploiter des tableaux en utilisant des formules de calculs simples</span><span class="se">\r\n</span><span class="s2">Illustrer des valeurs avec un graphique</span><span class="se">\r\n</span><span class="s2">Utiliser des listes de données </span><span class="se">\r\n</span><span class="s2">Mettre en forme les données</span><span class="se">\r\n</span><span class="s2">Mettre en page et imprimer un tableau dans Excel"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"targetedSkills"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"programme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;h2&gt;D&amp;eacute;couvrir Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;couverte du&amp;nbsp;tableur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;G&amp;eacute;n&amp;eacute;ralit&amp;eacute;s sur l'environnement&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Le&amp;nbsp;ruban&amp;nbsp;fichier&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Ouverture d'un classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Gestion&amp;nbsp;des&amp;nbsp;fen&amp;ecirc;tres&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement dans un&amp;nbsp;classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saisie de&amp;nbsp;donn&amp;eacute;es&amp;nbsp;dans&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Modification du&amp;nbsp;contenu d'une cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;S&amp;eacute;lection et&amp;nbsp;effacement de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Annulation et&amp;nbsp;r&amp;eacute;tablissement d'une action&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Enregistrement d'un classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;La&amp;nbsp;zone </span><span class="se">\"</span><span class="s2">Dites-nous ce&amp;nbsp;que vous voulez faire</span><span class="se">\"</span><span class="s2">&amp;nbsp;: outil d'aide &amp;agrave;&amp;nbsp;la&amp;nbsp;r&amp;eacute;alisation d'actions*&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;R&amp;eacute;aliser les&amp;nbsp;premiers calculs&amp;nbsp;avec&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saisie d'une formule de&amp;nbsp;calcul&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calcul d'une somme ou&amp;nbsp;autre statistique simple&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calcul d'un pourcentage&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;R&amp;eacute;f&amp;eacute;rence absolue dans une&amp;nbsp;formule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie vers des&amp;nbsp;cellules adjacentes&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie vers des&amp;nbsp;cellules non adjacentes&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Pr&amp;eacute;senter les&amp;nbsp;donn&amp;eacute;es&amp;nbsp;sous&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Formats num&amp;eacute;riques simples&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Police et&amp;nbsp;taille des&amp;nbsp;caract&amp;egrave;res&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Alignement des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Couleur des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Bordure des&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Utiliser les&amp;nbsp;th&amp;egrave;mes et&amp;nbsp;les styles pour la&amp;nbsp;mise en forme&amp;nbsp;dans&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Capture d'&amp;eacute;cran&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;G&amp;eacute;rer les&amp;nbsp;cellules&amp;nbsp;dans&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Zoom d'affichage&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Le&amp;nbsp;mode plein &amp;eacute;cran&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Largeur de&amp;nbsp;colonne / hauteur de&amp;nbsp;ligne&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Insertion / suppression de&amp;nbsp;lignes, de&amp;nbsp;colonnes...&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie rapide de&amp;nbsp;la mise en forme d'une cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Fusion de&amp;nbsp;cellules&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Orientation&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Affichage de&amp;nbsp;plusieurs lignes dans une&amp;nbsp;cellule&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Conserver la&amp;nbsp;copie&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Copie de&amp;nbsp;r&amp;eacute;sultats de&amp;nbsp;calcul&amp;nbsp;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Imprimer et&amp;nbsp;diffuser un&amp;nbsp;classeur&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Mise en page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Aper&amp;ccedil;u et&amp;nbsp;impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Titres de&amp;nbsp;colonnes / lignes r&amp;eacute;p&amp;eacute;t&amp;eacute;s &amp;agrave;&amp;nbsp;l'impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Masquage des&amp;nbsp;&amp;eacute;l&amp;eacute;ments d'une feuille&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Zone d'impression&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Saut de&amp;nbsp;page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;En-t&amp;ecirc;te et&amp;nbsp;pied de&amp;nbsp;page&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Pr&amp;eacute;sentation d&amp;rsquo;un tableau en ligne&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Pr&amp;eacute;senter les&amp;nbsp;chiffres avec des&amp;nbsp;graphiques&amp;nbsp;simples&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Outil d'aide au&amp;nbsp;choix du&amp;nbsp;type de&amp;nbsp;graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation et&amp;nbsp;d&amp;eacute;placement d'un graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Styles&amp;nbsp;et&amp;nbsp;dispositions&amp;nbsp;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;S&amp;eacute;lection et&amp;nbsp;mise&amp;nbsp;en&amp;nbsp;forme&amp;nbsp;des &amp;eacute;l&amp;eacute;ments d'un graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Modification des&amp;nbsp;&amp;eacute;l&amp;eacute;ments texte du&amp;nbsp;graphique&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;L&amp;eacute;gende et&amp;nbsp;zone de&amp;nbsp;tra&amp;ccedil;age&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Utiliser des&amp;nbsp;listes&amp;nbsp;de&amp;nbsp;donn&amp;eacute;es&amp;nbsp;avec&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation d'un tableau de&amp;nbsp;type liste de&amp;nbsp;donn&amp;eacute;es&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Utilisation du&amp;nbsp;remplissage instantan&amp;eacute;&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Tris&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Filtres automatiques&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Calculs automatiques dans un&amp;nbsp;tableau&amp;nbsp;Excel&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Filtrer dynamiquement avec les&amp;nbsp;Segments&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;h2&gt;Personnaliser les&amp;nbsp;feuilles des&amp;nbsp;classeurs&amp;nbsp;dans&amp;nbsp;Excel&lt;/h2&gt;</span><span class="se">\r\n</span><span class="s2">&lt;ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Cr&amp;eacute;ation d'un nouveau classeur&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Nom d'une feuille, couleur de&amp;nbsp;l'onglet&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;Insertion, suppression de&amp;nbsp;feuilles&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;li&gt;D&amp;eacute;placement, copie et&amp;nbsp;masquage d'une feuille&lt;/li&gt;</span><span class="se">\r\n</span><span class="s2">&lt;/ul&gt;</span><span class="se">\r\n</span><span class="s2">&lt;p&gt;&amp;nbsp;&lt;/p&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coverImage"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"file"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"thumb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:8000/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"alt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"priceInter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1200.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amountIncVat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440.00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"typicalLearningTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"nextStartdate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1560211200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"nextOpendate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1560729600</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"premises"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Group"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"domains"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Excel"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-        </span><span class="s2">"priceInter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1200.00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.00"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"amountIncVat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440.00"</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Lille"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lille"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Nantes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nantes"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"typicalLearningTime"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">172800</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"present"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"future"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"unscheduled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"nextStartdate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1560211200</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"nextOpendate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1560729600</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"premises"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Group"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Paris"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Lille"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lille"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Nantes"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nantes"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regus Marseille Les Docks"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marseille"</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
-            </span><span class="p">}</span><span class="w">
-        </span><span class="p">]</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Regus Marseille Les Docks"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marseille"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific course.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
@@ -1788,10 +1782,295 @@ curl -g <span class="s2">"https://api.institut.io/courses?duration[min]=100000&a
 </tr>
 </tbody></table>
 <h1 id='sessions'>Sessions</h1>
-<p>This section is currently being updated.</p>
-
 <p>A Session is a scheduled occurrence of a Course.</p>
-<h2 id='get-all-sessions-of-a-course'>Get All Sessions Of A Course</h2><h2 id='get-a-specific-session'>Get A Specific Session</h2><h1 id='domains'>Domains</h1>
+<h2 id='get-all-sessions-of-a-course'>Get All Sessions Of A Course</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/courses/1/sessions"</span>  <span class="se">\</span>
+  -H <span class="s2">"Authorization: ZKXvA9fE"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560204000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blended"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"planned"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-20T00:00:00+02:00"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"premises"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Group"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"timespans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560204000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onsite"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punctual"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-11T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-13T23:59:59+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">259200</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560722400"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"period"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-21T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1568671200"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blended"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"being planned"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"premises"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Lille"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"timespans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1568671200"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onsite"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punctual"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-17T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-18T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">259200</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1569189600"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"period"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-23T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-27T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all the Sessions of a Course.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/courses/&lt;id&gt;/sessions</code></p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Course which Sessions are to be retrieved</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-4'>Response Fields</h3>
+<p>The response fields for this endpoint are the same as the response fields for <a href="#get-a-specific-session">the &quot;Get A Specific Session&quot; endpoint</a>.</p>
+<h2 id='get-a-specific-session'>Get A Specific Session</h2><pre class="highlight shell tab-shell"><code>curl https://api.institut.io/sessions/1  <span class="se">\</span>
+  -H <span class="s2">"Authorization: ZKXvA9fE"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560204000"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blended"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"planned"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"threshold"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"subscription"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-09-20T00:00:00+02:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"premises"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Group"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"timespans"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560204000"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"onsite"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"punctual"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-11T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-12T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-13T23:59:59+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"canonical"</span><span class="p">:</span><span class="w"> </span><span class="mi">259200</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"days"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1560722400"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"learningmode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"online"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"scheduletype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"period"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"startdate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"starttime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"enddate"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endtime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"endcalculation"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"opendate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-17T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"closedate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-06-21T00:00:00+02:00"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"optional"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"weekday"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"duration"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves a specific Session.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://api.institut.io/sessions/&lt;id&gt;</code></p>
+<h3 id='query-parameters-12'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Session to retrieve</td>
+</tr>
+</tbody></table>
+<h3 id='response-fields-5'>Response Fields</h3>
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The ID of the Session</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>string</code></td>
+<td>The Session&#39;s position (see note below)</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>The Session&#39;s title</td>
+</tr>
+<tr>
+<td><code>learningmode</code></td>
+<td><code>string</code></td>
+<td>The Session&#39;s learning mode</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>The Session&#39;s status</td>
+</tr>
+<tr>
+<td><code>threshold</code></td>
+<td><code>int</code></td>
+<td>The minimum number of trainees for the Session to take place</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>The Session&#39;s description</td>
+</tr>
+<tr>
+<td><code>subscription</code></td>
+<td><code>array</code></td>
+<td>An array stating the Session&#39;s subscription period, ie a start date and an end date</td>
+</tr>
+<tr>
+<td><code>premises</code></td>
+<td><code>array</code></td>
+<td>The Premises where the Session takes place</td>
+</tr>
+<tr>
+<td><code>timespans</code></td>
+<td><code>array</code></td>
+<td>The Timespans describing the Session&#39;s schedule</td>
+</tr>
+</tbody></table>
+
+<p>The Session&#39;s position is a timestamp which is calculated automatically at the Session&#39;s creation/edition and when editing its Timespans. It indicates the starting point of the Session, based on all start date fields or open date fields in the Session and its Timespans. This field is useful for Session ordering.</p>
+<h1 id='domains'>Domains</h1>
 <p>A Domain is a training topic which Courses can be linked to.
 A Domain can have a parent and several children.</p>
 <h2 id='get-all-domains'>Get All Domains</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/domains"</span>  <span class="se">\</span>
@@ -1860,9 +2139,9 @@ A Domain can have a parent and several children.</p>
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all domains.</p>
-<h3 id='http-request-12'>HTTP Request</h3>
+<h3 id='http-request-14'>HTTP Request</h3>
 <p><code>GET https://api.institut.io/domains</code></p>
-<h3 id='response-fields-4'>Response Fields</h3>
+<h3 id='response-fields-6'>Response Fields</h3>
 <table><thead>
 <tr>
 <th>Field</th>
@@ -2036,9 +2315,9 @@ A Domain can have a parent and several children.</p>
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all premises.</p>
-<h3 id='http-request-13'>HTTP Request</h3>
+<h3 id='http-request-15'>HTTP Request</h3>
 <p><code>GET https://api.institut.io/premises</code></p>
-<h3 id='response-fields-5'>Response Fields</h3>
+<h3 id='response-fields-7'>Response Fields</h3>
 <p>The response fields for this endpoint are the same as the response fields for the endpoint which retrieves a specific premise.</p>
 <h2 id='get-a-specific-premise'>Get A Specific Premise</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.institut.io/premises/1"</span>  <span class="se">\</span>
   -H <span class="s2">"Authorization: ZKXvA9fE"</span>
@@ -2046,36 +2325,34 @@ A Domain can have a parent and several children.</p>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Lyon"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training center"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centre de formation de Omega Formation à Lyon"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"283 Rue Garibaldi"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"line2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"line3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69003"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lyon"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lyon@omega-formation.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0482538627"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Omega Formation Lyon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"training center"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rank"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Centre de formation de Omega Formation à Lyon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"line1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"283 Rue Garibaldi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"line2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"line3"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"zipcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69003"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lyon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"France"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lyon@omega-formation.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0482538627"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"fax"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific premise.</p>
-<h3 id='http-request-14'>HTTP Request</h3>
+<h3 id='http-request-16'>HTTP Request</h3>
 <p><code>GET https://api.institut.io/premises/&lt;id&gt;</code></p>
-<h3 id='query-parameters-11'>Query Parameters</h3>
+<h3 id='query-parameters-13'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2089,7 +2366,7 @@ A Domain can have a parent and several children.</p>
 <td>The ID of the premise to retrieve</td>
 </tr>
 </tbody></table>
-<h3 id='response-fields-6'>Response Fields</h3>
+<h3 id='response-fields-8'>Response Fields</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -2283,9 +2560,9 @@ A Domain can have a parent and several children.</p>
 <p>The <code>display</code> parameter can be used to optimize performance by returning only a selection of field values.</p>
 
 <p>The <code>id</code> field is always returned.</p>
-<h3 id='http-request-15'>HTTP Request</h3>
+<h3 id='http-request-17'>HTTP Request</h3>
 <p><code>GET https://api.institut.io/premises?display=&lt;fields_to_be_returned&gt;</code></p>
-<h3 id='query-parameters-12'>Query Parameters</h3>
+<h3 id='query-parameters-14'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -2315,6 +2592,12 @@ A Domain can have a parent and several children.</p>
 <li><p>Price</p></li>
 <li><p>Duration</p></li>
 <li><p>Count</p></li>
+</ul>
+
+<p>The following is specific to Session Objects:</p>
+
+<ul>
+<li>Timespan</li>
 </ul>
 <h2 id='image-object'>Image Object</h2>
 <table><thead>
@@ -2468,6 +2751,94 @@ A Domain can have a parent and several children.</p>
 <td>The number of sessions which dates have not been set</td>
 </tr>
 </tbody></table>
+<h2 id='timespan-object'>Timespan Object</h2>
+<p>The Timespan describe a period of time during which part of a Session is delivered.</p>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td>The Timespan&#39;s ID</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>string</code></td>
+<td>The Timespan&#39;s position (see note below)</td>
+</tr>
+<tr>
+<td><code>learningmode</code></td>
+<td><code>string</code></td>
+<td>The Timespan&#39;s learning mode</td>
+</tr>
+<tr>
+<td><code>scheduletype</code></td>
+<td><code>string</code></td>
+<td>The Timespan&#39;s schedule type</td>
+</tr>
+<tr>
+<td><code>startdate</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s start date</td>
+</tr>
+<tr>
+<td><code>starttime</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s start time</td>
+</tr>
+<tr>
+<td><code>enddate</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s end date</td>
+</tr>
+<tr>
+<td><code>endtime</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s end time</td>
+</tr>
+<tr>
+<td><code>endcalculation</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s calculated end date</td>
+</tr>
+<tr>
+<td><code>opendate</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s opening date</td>
+</tr>
+<tr>
+<td><code>closedate</code></td>
+<td><code>date</code></td>
+<td>The Timespan&#39;s closing date</td>
+</tr>
+<tr>
+<td><code>optional</code></td>
+<td><code>boolean</code></td>
+<td>States whether the Timespan is optional</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>The Timespan&#39;s description</td>
+</tr>
+<tr>
+<td><code>weekday</code></td>
+<td><code>string</code></td>
+<td>The Timespan&#39;s weekday</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td><code>array</code></td>
+<td>The Timespan&#39;s duration</td>
+</tr>
+</tbody></table>
+
+<p>The Timespan&#39;s position is a timestamp which is calculated automatically at the Timespan&#39;s creation/edition. It indicates the starting point of the Timespan. This field is useful for Timespan ordering.</p>
 <h1 id='errors'>Errors</h1>
 <p>The Institut.io API uses the following error codes:</p>
 
