@@ -8,7 +8,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
 #  - javascript
 
 toc_footers:
-  - <a href='https://www.institut.io' target='_blank'>Sign up for an account</a>
+  - <a href='https://www.institut.io' target='_blank'>Visit Institut.io's website</a>
+  - <a href='https://api.institut.io/admin/register' target='_blank'>Sign up for an account</a>
   - <a href='https://api.institut.io/admin/login' target='_blank'>Login to your account</a>
 
 includes:
@@ -69,7 +70,9 @@ Institut.io operates exclusively over HTTPS. Requests that are received over HTT
 
 ## Account Creation
 
-An Account can be created free of payment, capture or any kind of commitment, using the <a href="https://www.institut.io" target="&#95;blank">Institut.io's website</a>.
+An Account can be created free of payment, capture or any kind of commitment, using <a href="https://api.institut.io/admin/register/" target="&#95;blank">Institut.io's registration page</a>.
+
+For more information about Institut.io's benefits and offers, please visit <a href="https://www.institut.io" target="&#95;blank">Institut.io's website</a>.
 
 ## Account Object
 
@@ -316,9 +319,7 @@ This endpoint retrieves all Courses.
 
 ### Response Fields
 
-Field | Description
---------- | -----------
-id | Identifier of the course
+The response fields for this endpoint are the same as the response fields for <a href="#get-a-specific-course">the "Get A Specific Course" endpoint</a>.
 
 ## Get A Specific Course
 
@@ -330,89 +331,87 @@ curl https://api.institut.io/courses/1  \
 > The above command returns JSON structured like this:
 
 ```json
-[
-    {
+{
+    "id": 1,
+    "title": "Excel Initiation - Tableaux de calculs simples",
+    "indexed": true,
+    "owner": {
         "id": 1,
-        "title": "Excel Initiation - Tableaux de calculs simples",
-        "indexed": true,
-        "owner": {
-            "id": 1,
-            "title": "Omega Formation",
-            "coverImage": {
-                "file": "https://api.institut.io/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
-                "thumb": "https://api.institut.io/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
-                "alt": "Omega Formation"
-            }
-        },
-        "mode": {
-            "id": 1,
-            "value": "onsite"
-        },
-        "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
-        "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
-        "description": null,
-        "targetedSkills": null,
-        "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+        "title": "Omega Formation",
         "coverImage": {
-            "file": "https://api.institut.io/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
-            "thumb": "https://api.institut.io/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
-            "alt": "Excel"
+            "file": "http://localhost:8000/uploads/images/c0d5c55bf328956abb9fad8133db4ee1.png",
+            "thumb": "http://localhost:8000/uploads/images/_c0d5c55bf328956abb9fad8133db4ee1.png",
+            "alt": "Omega Formation"
+        }
+    },
+    "mode": {
+        "id": 1,
+        "value": "onsite"
+    },
+    "summary": "La formation Excel Initiation vous apprendra à maîtriser les fonctionnalités fondamentales du tableur de Microsoft Office.",
+    "goal": "Maîtriser les fonctionnalités fondamentales d'Excel\r\nConcevoir et exploiter des tableaux en utilisant des formules de calculs simples\r\nIllustrer des valeurs avec un graphique\r\nUtiliser des listes de données \r\nMettre en forme les données\r\nMettre en page et imprimer un tableau dans Excel",
+    "description": null,
+    "targetedSkills": null,
+    "programme": "<h2>D&eacute;couvrir Excel</h2>\r\n<ul>\r\n<li>D&eacute;couverte du&nbsp;tableur</li>\r\n<li>G&eacute;n&eacute;ralit&eacute;s sur l'environnement&nbsp;Excel</li>\r\n<li>Le&nbsp;ruban&nbsp;fichier</li>\r\n<li>Ouverture d'un classeur</li>\r\n<li>Gestion&nbsp;des&nbsp;fen&ecirc;tres</li>\r\n<li>D&eacute;placement dans un&nbsp;classeur</li>\r\n<li>Saisie de&nbsp;donn&eacute;es&nbsp;dans&nbsp;Excel</li>\r\n<li>Modification du&nbsp;contenu d'une cellule</li>\r\n<li>S&eacute;lection et&nbsp;effacement de&nbsp;cellules</li>\r\n<li>Annulation et&nbsp;r&eacute;tablissement d'une action</li>\r\n<li>Enregistrement d'un classeur</li>\r\n<li>La&nbsp;zone \"Dites-nous ce&nbsp;que vous voulez faire\"&nbsp;: outil d'aide &agrave;&nbsp;la&nbsp;r&eacute;alisation d'actions*</li>\r\n</ul>\r\n<h2>R&eacute;aliser les&nbsp;premiers calculs&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Saisie d'une formule de&nbsp;calcul</li>\r\n<li>Calcul d'une somme ou&nbsp;autre statistique simple</li>\r\n<li>Calcul d'un pourcentage</li>\r\n<li>R&eacute;f&eacute;rence absolue dans une&nbsp;formule</li>\r\n<li>Copie vers des&nbsp;cellules adjacentes</li>\r\n<li>Copie vers des&nbsp;cellules non adjacentes</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;donn&eacute;es&nbsp;sous&nbsp;Excel</h2>\r\n<ul>\r\n<li>Formats num&eacute;riques simples</li>\r\n<li>Police et&nbsp;taille des&nbsp;caract&egrave;res</li>\r\n<li>Alignement des&nbsp;cellules</li>\r\n<li>Couleur des&nbsp;cellules</li>\r\n<li>Bordure des&nbsp;cellules</li>\r\n<li>Utiliser les&nbsp;th&egrave;mes et&nbsp;les styles pour la&nbsp;mise en forme&nbsp;dans&nbsp;Excel</li>\r\n<li>Capture d'&eacute;cran</li>\r\n</ul>\r\n<h2>G&eacute;rer les&nbsp;cellules&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Zoom d'affichage</li>\r\n<li>Le&nbsp;mode plein &eacute;cran</li>\r\n<li>Largeur de&nbsp;colonne / hauteur de&nbsp;ligne</li>\r\n<li>Insertion / suppression de&nbsp;lignes, de&nbsp;colonnes...</li>\r\n<li>D&eacute;placement de&nbsp;cellules</li>\r\n<li>Copie rapide de&nbsp;la mise en forme d'une cellule</li>\r\n<li>Fusion de&nbsp;cellules</li>\r\n<li>Orientation</li>\r\n<li>Affichage de&nbsp;plusieurs lignes dans une&nbsp;cellule</li>\r\n<li>Conserver la&nbsp;copie</li>\r\n<li>Copie de&nbsp;r&eacute;sultats de&nbsp;calcul&nbsp;</li>\r\n</ul>\r\n<h2>Imprimer et&nbsp;diffuser un&nbsp;classeur&nbsp;Excel</h2>\r\n<ul>\r\n<li>Mise en page</li>\r\n<li>Aper&ccedil;u et&nbsp;impression</li>\r\n<li>Titres de&nbsp;colonnes / lignes r&eacute;p&eacute;t&eacute;s &agrave;&nbsp;l'impression</li>\r\n<li>Masquage des&nbsp;&eacute;l&eacute;ments d'une feuille</li>\r\n<li>Zone d'impression</li>\r\n<li>Saut de&nbsp;page</li>\r\n<li>En-t&ecirc;te et&nbsp;pied de&nbsp;page</li>\r\n<li>Pr&eacute;sentation d&rsquo;un tableau en ligne</li>\r\n</ul>\r\n<h2>Pr&eacute;senter les&nbsp;chiffres avec des&nbsp;graphiques&nbsp;simples</h2>\r\n<ul>\r\n<li>Outil d'aide au&nbsp;choix du&nbsp;type de&nbsp;graphique</li>\r\n<li>Cr&eacute;ation et&nbsp;d&eacute;placement d'un graphique</li>\r\n<li>Styles&nbsp;et&nbsp;dispositions&nbsp;</li>\r\n<li>S&eacute;lection et&nbsp;mise&nbsp;en&nbsp;forme&nbsp;des &eacute;l&eacute;ments d'un graphique</li>\r\n<li>Modification des&nbsp;&eacute;l&eacute;ments texte du&nbsp;graphique</li>\r\n<li>L&eacute;gende et&nbsp;zone de&nbsp;tra&ccedil;age</li>\r\n</ul>\r\n<h2>Utiliser des&nbsp;listes&nbsp;de&nbsp;donn&eacute;es&nbsp;avec&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un tableau de&nbsp;type liste de&nbsp;donn&eacute;es</li>\r\n<li>Utilisation du&nbsp;remplissage instantan&eacute;</li>\r\n<li>Tris</li>\r\n<li>Filtres automatiques</li>\r\n<li>Calculs automatiques dans un&nbsp;tableau&nbsp;Excel</li>\r\n<li>Filtrer dynamiquement avec les&nbsp;Segments</li>\r\n</ul>\r\n<h2>Personnaliser les&nbsp;feuilles des&nbsp;classeurs&nbsp;dans&nbsp;Excel</h2>\r\n<ul>\r\n<li>Cr&eacute;ation d'un nouveau classeur</li>\r\n<li>Nom d'une feuille, couleur de&nbsp;l'onglet</li>\r\n<li>Insertion, suppression de&nbsp;feuilles</li>\r\n<li>D&eacute;placement, copie et&nbsp;masquage d'une feuille</li>\r\n</ul>\r\n<p>&nbsp;</p>",
+    "coverImage": {
+        "file": "http://localhost:8000/uploads/images/2c8ef4e045eca260e4661698e029b125.jpeg",
+        "thumb": "http://localhost:8000/uploads/images/_2c8ef4e045eca260e4661698e029b125.jpeg",
+        "alt": "Excel"
+    },
+    "domains": [
+        {
+            "id": 8,
+            "title": "Excel"
+        }
+    ],
+    "priceInter": {
+        "amount": "1200.00",
+        "currency": "EUR",
+        "vat": "20.00",
+        "amountIncVat": "1440.00"
+    },
+    "duration": {
+        "canonical": 172800,
+        "days": 2
+    },
+    "typicalLearningTime": {
+        "canonical": 172800,
+        "days": 2
+    },
+    "count": {
+        "present": 0,
+        "future": 1,
+        "unscheduled": 0
+    },
+    "nextStartdate": 1560211200,
+    "nextOpendate": 1560729600,
+    "premises": [
+        {
+            "id": 2,
+            "title": "Omega Group",
+            "city": "Paris",
+            "country": "France"
         },
-        "domains": [
-            {
-                "id": 8,
-                "title": "Excel"
-            }
-        ],
-        "priceInter": {
-            "amount": "1200.00",
-            "currency": "EUR",
-            "vat": "20.00",
-            "amountIncVat": "1440.00"
+        {
+            "id": 3,
+            "title": "Omega Formation Lille",
+            "city": "Lille",
+            "country": "France"
         },
-        "duration": {
-            "canonical": 172800,
-            "days": 2
+        {
+            "id": 4,
+            "title": "Omega Formation Nantes",
+            "city": "Nantes",
+            "country": "France"
         },
-        "typicalLearningTime": {
-            "canonical": 172800,
-            "days": 2
-        },
-        "count": {
-            "present": 0,
-            "future": 1,
-            "unscheduled": 0
-        },
-        "nextStartdate": 1560211200,
-        "nextOpendate": 1560729600,
-        "premises": [
-            {
-                "id": 2,
-                "title": "Omega Group",
-                "city": "Paris",
-                "country": "France"
-            },
-            {
-                "id": 3,
-                "title": "Omega Formation Lille",
-                "city": "Lille",
-                "country": "France"
-            },
-            {
-                "id": 4,
-                "title": "Omega Formation Nantes",
-                "city": "Nantes",
-                "country": "France"
-            },
-            {
-                "id": 5,
-                "title": "Regus Marseille Les Docks",
-                "city": "Marseille",
-                "country": "France"
-            }
-        ]
-    }
-]
+        {
+            "id": 5,
+            "title": "Regus Marseille Les Docks",
+            "city": "Marseille",
+            "country": "France"
+        }
+    ]
+}
 ```
 
 This endpoint retrieves a specific course.
@@ -473,8 +472,6 @@ Parameter | Type | Description
 --------- | --------- | -----------
 <code>first_result_ranking</code> | <code>int</code> | Ranking of the first result to be returned
 <code>max_number_returned_results</code> | <code>int</code> | Maximum number of results to be returned
-
-
 
 ## Search An Expression
 
@@ -1344,13 +1341,252 @@ Parameter | Type | Description
 
 # Sessions
 
-This section is currently being updated.
-
 A Session is a scheduled occurrence of a Course.
 
 ## Get All Sessions Of A Course
 
+```shell
+curl "https://api.institut.io/courses/1/sessions"  \
+  -H "Authorization: ZKXvA9fE"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "id": 1,
+        "position": "1560204000",
+        "title": null,
+        "learningmode": "blended",
+        "status": "planned",
+        "threshold": 3,
+        "description": null,
+        "subscription": {
+            "startdate": null,
+            "enddate": "2019-09-20T00:00:00+02:00"
+        },
+        "premises": [
+            {
+                "id": null,
+                "title": "Omega Group"
+            }
+        ],
+        "timespans": [
+            {
+                "id": 1,
+                "position": "1560204000",
+                "learningmode": "onsite",
+                "scheduletype": "punctual",
+                "startdate": "2019-06-11T00:00:00+02:00",
+                "starttime": null,
+                "enddate": "2019-06-12T00:00:00+02:00",
+                "endtime": null,
+                "endcalculation": "2019-06-13T23:59:59+02:00",
+                "opendate": null,
+                "closedate": null,
+                "optional": false,
+                "description": null,
+                "weekday": null,
+                "duration": {
+                    "canonical": 259200,
+                    "days": 3
+                }
+            },
+            {
+                "id": 2,
+                "position": "1560722400",
+                "learningmode": "online",
+                "scheduletype": "period",
+                "startdate": null,
+                "starttime": null,
+                "enddate": null,
+                "endtime": null,
+                "endcalculation": null,
+                "opendate": "2019-06-17T00:00:00+02:00",
+                "closedate": "2019-06-21T00:00:00+02:00",
+                "optional": false,
+                "description": null,
+                "weekday": null,
+                "duration": null
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "position": "1568671200",
+        "title": null,
+        "learningmode": "blended",
+        "status": "being planned",
+        "threshold": null,
+        "description": null,
+        "subscription": {
+            "startdate": null,
+            "enddate": null
+        },
+        "premises": [
+            {
+                "id": null,
+                "title": "Omega Formation Lille"
+            }
+        ],
+        "timespans": [
+            {
+                "id": 14,
+                "position": "1568671200",
+                "learningmode": "onsite",
+                "scheduletype": "punctual",
+                "startdate": "2019-09-17T00:00:00+02:00",
+                "starttime": null,
+                "enddate": "2019-09-18T00:00:00+02:00",
+                "endtime": null,
+                "endcalculation": null,
+                "opendate": null,
+                "closedate": null,
+                "optional": false,
+                "description": null,
+                "weekday": null,
+                "duration": {
+                    "canonical": 259200,
+                    "days": 3
+                }
+            },
+            {
+                "id": 15,
+                "position": "1569189600",
+                "learningmode": "online",
+                "scheduletype": "period",
+                "startdate": null,
+                "starttime": null,
+                "enddate": null,
+                "endtime": null,
+                "endcalculation": null,
+                "opendate": "2019-09-23T00:00:00+02:00",
+                "closedate": "2019-09-27T00:00:00+02:00",
+                "optional": false,
+                "description": null,
+                "weekday": null,
+                "duration": null
+            }
+        ]
+    }
+]
+```
+
+This endpoint retrieves all the Sessions of a Course.
+
+### HTTP Request
+
+`GET https://api.institut.io/courses/<id>/sessions`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | --------- | -----------
+<code>id</code> | <code>int</code> | The ID of the Course which Sessions are to be retrieved
+
+### Response Fields
+
+The response fields for this endpoint are the same as the response fields for <a href="#get-a-specific-session">the "Get A Specific Session" endpoint</a>.
+
 ## Get A Specific Session
+
+```shell
+curl https://api.institut.io/sessions/1  \
+  -H "Authorization: ZKXvA9fE"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": 1,
+    "position": "1560204000",
+    "title": null,
+    "learningmode": "blended",
+    "status": "planned",
+    "threshold": 3,
+    "description": null,
+    "subscription": {
+        "startdate": null,
+        "enddate": "2019-09-20T00:00:00+02:00"
+    },
+    "premises": [
+        {
+            "id": null,
+            "title": "Omega Group"
+        }
+    ],
+    "timespans": [
+        {
+            "id": 1,
+            "position": "1560204000",
+            "learningmode": "onsite",
+            "scheduletype": "punctual",
+            "startdate": "2019-06-11T00:00:00+02:00",
+            "starttime": null,
+            "enddate": "2019-06-12T00:00:00+02:00",
+            "endtime": null,
+            "endcalculation": "2019-06-13T23:59:59+02:00",
+            "opendate": null,
+            "closedate": null,
+            "optional": false,
+            "description": null,
+            "weekday": null,
+            "duration": {
+                "canonical": 259200,
+                "days": 3
+            }
+        },
+        {
+            "id": 2,
+            "position": "1560722400",
+            "learningmode": "online",
+            "scheduletype": "period",
+            "startdate": null,
+            "starttime": null,
+            "enddate": null,
+            "endtime": null,
+            "endcalculation": null,
+            "opendate": "2019-06-17T00:00:00+02:00",
+            "closedate": "2019-06-21T00:00:00+02:00",
+            "optional": false,
+            "description": null,
+            "weekday": null,
+            "duration": null
+        }
+    ]
+}
+```
+
+This endpoint retrieves a specific Session.
+
+### HTTP Request
+
+`GET https://api.institut.io/sessions/<id>`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | --------- | -----------
+<code>id</code> | <code>int</code> | The ID of the Session to retrieve
+
+### Response Fields
+
+Field | Type | Description
+--------- | ------- | -----------
+<code>id</code> | <code>int</code> | The ID of the Session
+<code>position</code> | <code>string</code> | The Session's position (see note below)
+<code>title</code> | <code>string</code> | The Session's title
+<code>learningmode</code> | <code>string</code> | The Session's learning mode
+<code>status</code> | <code>string</code> | The Session's status
+<code>threshold</code> | <code>int</code> | The minimum number of trainees for the Session to take place
+<code>description</code> | <code>string</code> | The Session's description
+<code>subscription</code> | <code>array</code> | An array stating the Session's subscription period, ie a start date and an end date
+<code>premises</code> | <code>array</code> | The Premises where the Session takes place
+<code>timespans</code> | <code>array</code> | The Timespans describing the Session's schedule
+
+The Session's position is a timestamp which is calculated automatically at the Session's creation/edition and when editing its Timespans. It indicates the starting point of the Session, based on all start date fields or open date fields in the Session and its Timespans. This field is useful for Session ordering.
 
 # Domains
 
@@ -1617,31 +1853,29 @@ curl "https://api.institut.io/premises/1"  \
 > The above command returns JSON structured like this:
 
 ```json
-[
-    {
-        "id": "1",
-        "title": "Omega Formation Lyon",
-        "type": "training center",
-        "rank": 3,
-        "description": "Centre de formation de Omega Formation à Lyon",
-        "address": {
-            "line1": "283 Rue Garibaldi",
-            "line2": null,
-            "line3": null
-        },
-        "zipcode": "69003",
-        "city": "Lyon",
-        "state": null,
-        "country": "France",
-        "coordinates": {
-            "latitude": "46",
-            "longitude": "5"
-        },
-        "email": "lyon@omega-formation.com",
-        "phone": "0482538627",
-        "fax": null
-    }
-]
+{
+    "id": 1,
+    "title": "Omega Formation Lyon",
+    "type": "training center",
+    "rank": 3,
+    "description": "Centre de formation de Omega Formation à Lyon",
+    "address": {
+        "line1": "283 Rue Garibaldi",
+        "line2": null,
+        "line3": null
+    },
+    "zipcode": "69003",
+    "city": "Lyon",
+    "state": null,
+    "country": "France",
+    "coordinates": {
+        "latitude": "46",
+        "longitude": "5"
+    },
+    "email": "lyon@omega-formation.com",
+    "phone": "0482538627",
+    "fax": null
+}
 ```
 
 This endpoint retrieves a specific premise.
@@ -1817,6 +2051,10 @@ Others are specific to Course Objects:
 
 - Count
 
+The following is specific to Session Objects:
+
+- Timespan
+
 ## Image Object
 
 Property | Type | Description
@@ -1867,3 +2105,27 @@ Property | Type | Description
 <code>present</code> | <code>int</code> | The number of sessions that have already started and are not yet finished
 <code>future</code> | <code>int</code> | The number of sessions that have not started yet
 <code>unscheduled</code> | <code>int</code> | The number of sessions which dates have not been set
+
+## Timespan Object
+
+The Timespan describe a period of time during which part of a Session is delivered.
+
+Property | Type | Description
+--------- | ------- | -----------
+<code>id</code> | <code>int</code> | The Timespan's ID
+<code>position</code> | <code>string</code> | The Timespan's position (see note below)
+<code>learningmode</code> | <code>string</code> | The Timespan's learning mode
+<code>scheduletype</code> | <code>string</code> | The Timespan's schedule type
+<code>startdate</code> | <code>date</code> | The Timespan's start date
+<code>starttime</code> | <code>date</code> | The Timespan's start time
+<code>enddate</code> | <code>date</code> | The Timespan's end date
+<code>endtime</code> | <code>date</code> | The Timespan's end time
+<code>endcalculation</code> | <code>date</code> | The Timespan's calculated end date
+<code>opendate</code> | <code>date</code> | The Timespan's opening date
+<code>closedate</code> | <code>date</code> | The Timespan's closing date
+<code>optional</code> | <code>boolean</code> | States whether the Timespan is optional
+<code>description</code> | <code>string</code> | The Timespan's description
+<code>weekday</code> | <code>string</code> | The Timespan's weekday
+<code>duration</code> | <code>array</code> | The Timespan's duration
+
+The Timespan's position is a timestamp which is calculated automatically at the Timespan's creation/edition. It indicates the starting point of the Timespan. This field is useful for Timespan ordering.
